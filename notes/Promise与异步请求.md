@@ -583,12 +583,6 @@ Promise.any([promise1,promise2,promise3]).then(res=>{
 })
 ```
 
-
-## API
-
-
-
-
 ## Promise 的面试题
 
 ## Promise 的实现
