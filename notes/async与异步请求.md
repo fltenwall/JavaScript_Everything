@@ -57,8 +57,99 @@ new Promise((resolve, reject)=>{
 })
 ```
 
+#### then 方法
 
-#### API
+then方法返回一个新的 Promise 对象;
+
+then方法返回一个 Promise，如果直接在then方法里返回一个普通对象，则会将其包裹为一个 Promise 对象;
+
+4.js
+```javascript
+const promise = new Promise((resolve,reject)=>{
+    resolve('ok')
+});
+
+promise.then((res)=>{
+    return 'new';
+}).then(res=>{
+    console.log('new',res) // new new
+})
+
+
+/*执行结果
+old1 ok
+new new
+old2 undefined
+*/
+```
+无返回值时，默认返回undefined
+
+5.js
+
+```javascript
+const promise = new Promise((resolve,reject)=>{
+    resolve('ok')
+});
+
+promise.then((res)=>{
+    console.log('old1',res) // old1 ok
+    // 无返回值默认返回 undefined, 作为新返回的 Promise对象resolve值
+}).then(res=>{
+    console.log('old2',res) // old2 undefined
+})
+
+//old1 ok
+//old2 undefined
+```
+
+若返回 Promise 时，将 Promise用 Promise 进行包裹，即返回了一个参数为 Promise 对象的 Promise;
+
+6.js
+
+```javascript
+const promise = new Promise((resolve,reject)=>{
+    resolve('ok')
+});
+
+// then方法返回 Promise 时，将 Promise用 Promise 进行包裹，即返回了一个参数为 Promise 对象的 Promise
+promise.then((res)=>{
+    return new Promise((resolve, reject)=>{
+        resolve('return promise')
+    })
+}).then(res=>{
+    console.log(res); // return promise
+})
+
+// return promise
+```
+
+若传入了一个实现了 then 方法的对象，将 Promise用 Promise 进行包裹，执行该then方法且由此方法决定状态;
+
+7.js
+
+```javascript
+const promise = new Promise((resolve,reject)=>{
+    resolve('ok')
+});
+
+promise.then((res)=>{
+    return obj = {
+        then: function(){
+            console.log('thenable');
+        }
+    }
+}).then(res=>{
+    console.log(res);
+});
+
+// thenable
+```
+
+#### catch方法
+
+
+
+## API
 
 
 
