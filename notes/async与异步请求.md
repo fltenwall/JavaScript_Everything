@@ -306,6 +306,284 @@ err 第一个catch
 Error: 错误
 */
 ```
+
+#### finally，最后一定会执行
+
+16.js
+
+```javascript
+const promise = new Promise((resolve, reject)=>{
+    reject('err')
+});
+
+promise.then(res=>{
+    console.log(res)
+}).catch(err=>{
+    console.log(err)
+}).finally(()=>{
+    console.log('end')
+})
+```
+
+#### 类方法-Promise.resolve()
+
+将一个对象直接转为promise对象
+
+17.js
+
+```javascript
+const promise = new Promise((resolve, reject)=>{
+    resolve({name:'flten'});
+});
+
+promise.then(res=>{
+    console.log(res); // { name: 'flten' }
+})
+
+const promise2 = Promise.resolve({name:'flten'});
+
+promise2.then(res=>{
+    console.log(res); // { name: 'flten' }
+})
+```
+
+#### 类方法-Promise.reject()
+
+直接返回一个 reject 状态的 Promise 对象
+
+18.js
+
+```javascript
+const promise =  Promise.reject('no');
+
+promise.then(res=>{
+    console.log(res);
+}).catch(err=>{
+    console.log(err); // no
+})
+```
+
+#### 类方法-Promise.all()
+
+传入一个 Promise 对象数组，按数组顺序返回数据
+
+19.js
+
+```javascript
+const promise1 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve(1)
+    },1000)
+})
+
+const promise2 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve(2)
+    },2000)
+})
+
+const promise3 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve(3)
+    },3000)
+})
+
+Promise.all([promise1, promise2, promise3]).then(res=>{
+    console.log(res) // [ 1, 2, 3 ]
+})
+```
+
+但其中一个 Promise 对象变成reject状态，则新的 Promise 立即变为reject状态
+
+```javascript
+// 20.js
+
+const promise1 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve(1)
+    },1000)
+})
+
+const promise2 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        reject('err')
+    },2000)
+})
+
+const promise3 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve(3)
+    },3000)
+})
+
+// 其中一个 Promise 对象变成reject状态，则新的 Promise 立即变为reject状态
+Promise.all([promise1, promise2, promise3]).then(res=>{
+    console.log(res)
+}).catch(err=>{
+    console.log(err) // err
+})
+```
+
+#### 类方法-Promise.allSettled()
+
+在即使有 reject 状态的情况下，仍然返回全部结果
+
+```javascript
+// 21.js
+const promise1 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve(1)
+    },1000)
+})
+
+const promise2 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        reject('err')
+    },2000)
+})
+
+const promise3 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve(3)
+    },3000)
+})
+
+Promise.allSettled([promise1, promise2, promise3]).then(res=>{
+    console.log(res)
+}).catch(err=>{
+    console.log(err) 
+})
+
+/*
+[
+  { status: 'fulfilled', value: 1 },
+  { status: 'rejected', reason: 'err' },
+  { status: 'fulfilled', value: 3 }
+]
+*/
+```
+
+#### 类方法-Promise.race()
+
+返回最先执行结束的Promise
+
+```javascript
+// 22.js
+const promise1 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve(1)
+    },1000)
+})
+
+const promise2 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        reject('err')
+    },2000)
+})
+
+const promise3 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve(3)
+    },3000)
+})
+
+Promise.race([promise1,promise2,promise3]).then(res=>{
+    console.log(res) // 1
+})
+```
+
+如果第一个执行结束的是返回 reject 状态，同样返回  reject 的结果
+
+```javascript
+// 23.js
+const promise1 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        reject('err1')
+    },1000)
+})
+
+const promise2 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        reject('err')
+    },2000)
+})
+
+const promise3 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve(3)
+    },3000)
+})
+
+Promise.race([promise1,promise2,promise3]).then(res=>{
+    console.log('res',res)
+}).catch(err=>{
+    console.log('err',err) // err err1
+})
+```
+
+#### 类方法-Promise.any()
+
+得到一个状态为 fulfilled 之后才会结束，不会因为第一个返回的状态为 reject 而直接结束
+
+```javascript
+// 24.js
+const promise1 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        reject('err1')
+    },1000)
+})
+
+const promise2 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        reject('err')
+    },2000)
+})
+
+const promise3 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve(3)
+    },3000)
+})
+
+// 有一个状态为 fulfilled 之后才会结束
+Promise.any([promise1,promise2,promise3]).then(res=>{
+    console.log(res) // 3
+}).catch(err=>{
+    console.log(err) 
+})
+```
+
+若全为 reject , 也会等到全部 Promise 执行都返回reject
+```javascript
+// 25.js
+const promise1 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        reject('err1')
+    },1000)
+})
+
+const promise2 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        reject('err2')
+    },2000)
+})
+
+const promise3 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        reject('err3')
+    },3000)
+})
+
+// 若全为 reject , 也会等到全部 Promise 执行都返回reject
+Promise.any([promise1,promise2,promise3]).then(res=>{
+    console.log(res)
+}).catch(err=>{
+    console.log(err) // AggregateError: All promises were rejected
+    console.log(err.errors) // (3) ['err1', 'err2', 'err3']
+})
+```
+
+
 ## API
 
 
