@@ -252,6 +252,60 @@ err then中错误捕获
 err 单独catch捕获
 */
 ```
+catch方法也是返回一个 Promise 对象
+
+14.js
+
+```javascript
+const promise = new Promise((resolve, reject)=>{
+    reject('err')
+});
+
+// catch方法也是返回一个 Promise 对象
+// 如果不是抛出异常，则后面执行then
+promise.then(res=>{
+    console.log(res)
+}).catch(err=>{
+    console.log(err, '第一个catch')
+    return err
+}).then(res=>{
+    console.log(res,'第二个then')
+}).catch(err=>{
+    console.log(err)
+})
+
+/*
+err 第一个catch
+err 第二个then
+*/
+```
+
+若catch方法返回错误，会被后面的catch捕获
+
+15.js
+
+```javascript
+const promise = new Promise((resolve, reject)=>{
+    reject('err')
+});
+
+// catch方法返回错误，会被后面的catch捕获
+promise.then(res=>{
+    console.log(res)
+}).catch(err=>{
+    console.log(err, '第一个catch')
+    return new Error('错误')
+}).then(res=>{
+    console.log(res,'第二个then')
+}).catch(err=>{
+    console.log(err)
+})
+
+/*
+err 第一个catch
+Error: 错误
+*/
+```
 ## API
 
 
