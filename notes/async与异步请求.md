@@ -230,8 +230,27 @@ promise.then(res =>{
 
 13.js
 
-```javascript
+如果catch是非链式调用，则then方法需要进行自己的错误捕获，与后面catch的错误捕获是独立的
 
+```javascript
+const promise = new Promise((resolve, reject)=>{
+    reject('err')
+});
+
+promise.then(res=>{
+    console.log(res)
+},err=>{
+    console.log(err,'then中错误捕获')
+})
+
+promise.catch(err=>{
+    console.log(err, '单独catch捕获')
+})
+
+/*
+err then中错误捕获
+err 单独catch捕获
+*/
 ```
 ## API
 
