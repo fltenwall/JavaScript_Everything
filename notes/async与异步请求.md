@@ -145,10 +145,94 @@ promise.then((res)=>{
 // thenable
 ```
 
-#### catch方法
+#### catch方法与异常捕获与错误
+
+用then方法的第二个回调函数捕获错误
+
+08.js
+
+```javascript
+const promise = new Promise((resolve, reject)=>{
+    throw new Error('示例抛出异常')
+});
+
+promise.then(res, err=>{
+    console.log(err);
+});
+```
+catch捕获错误
+
+09.js
+
+```javascript
+const promise = new Promise((resolve, reject)=>{
+    throw new Error('示例抛出异常')
+});
+
+promise.catch(err=>{
+    console.log(err);
+});
+```
+
+链式调用中，catch优先捕获的是第一个Promise 对象抛出的异常
+
+10.js
+```javascript
+const promise = new Promise((resolve, reject)=>{
+    throw new Error('示例抛出异常')
+});
+
+promise.then(res =>{
+    return new Promise((resolve, reject)=>{
+        throw new Error('then方法返回的 Promise 错误')
+    })
+}).catch(err=>{ // 捕获的是第一个Promise 对象抛出的异常
+    console.log(err); // Error: 示例抛出异常
+})
+```
+
+若第一个 Promise 没有抛出异常，则捕获then方法返回的 Promise 对象的异常
+
+11.js
+
+```javascript
+const promise = new Promise((resolve, reject)=>{
+    resolve('ok')
+});
+
+promise.then(res =>{
+    return new Promise((resolve, reject)=>{
+        throw new Error('then方法返回的 Promise 错误')
+    })
+}).catch(err=>{ // 捕获的是then方法返回的Promise 对象抛出的异常
+    console.log(err); // Error: 示例抛出异常
+})
+```
+catch可以捕获reject异常
+
+12.js
+
+```javascript
+const promise = new Promise((resolve, reject)=>{
+    reject('err')
+});
+
+promise.then(res =>{
+    return new Promise((resolve, reject)=>{
+        throw new Error('then方法返回的 Promise 错误')
+    })
+}).catch(err=>{ // 捕获的是第一个Promise 的reject信息
+    console.log(err); // err
+})
+
+```
 
 
+13.js
 
+```javascript
+
+```
 ## API
 
 
