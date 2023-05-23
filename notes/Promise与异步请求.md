@@ -1,7 +1,26 @@
+<!-- vscode-markdown-toc -->
+* 1. [Promise 的使用](#Promise)
+		* 1.1. [快速上手](#)
+		* 1.2. [then 方法](#then)
+		* 1.3. [catch方法与异常捕获与错误](#catch)
+		* 1.4. [finally，最后一定会执行](#finally)
+		* 1.5. [类方法-Promise.resolve()](#-Promise.resolve)
+		* 1.6. [类方法-Promise.reject()](#-Promise.reject)
+		* 1.7. [类方法-Promise.all()](#-Promise.all)
+		* 1.8. [类方法-Promise.allSettled()](#-Promise.allSettled)
+		* 1.9. [类方法-Promise.race()](#-Promise.race)
+		* 1.10. [类方法-Promise.any()](#-Promise.any)
+* 2. [Promise 的面试题](#Promise-1)
+* 3. [Promise 的实现](#Promise-1)
 
-## Promise 的使用
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+##  1. <a name='Promise'></a>Promise 的使用
 
-#### 快速上手
+####  1.1. <a name=''></a>快速上手
 
 01快手上手.js
 
@@ -57,7 +76,7 @@ new Promise((resolve, reject)=>{
 })
 ```
 
-#### then 方法
+####  1.2. <a name='then'></a>then 方法
 
 then方法返回一个新的 Promise 对象;
 
@@ -145,7 +164,7 @@ promise.then((res)=>{
 // thenable
 ```
 
-#### catch方法与异常捕获与错误
+####  1.3. <a name='catch'></a>catch方法与异常捕获与错误
 
 用then方法的第二个回调函数捕获错误
 
@@ -307,7 +326,7 @@ Error: 错误
 */
 ```
 
-#### finally，最后一定会执行
+####  1.4. <a name='finally'></a>finally，最后一定会执行
 
 16.js
 
@@ -325,7 +344,7 @@ promise.then(res=>{
 })
 ```
 
-#### 类方法-Promise.resolve()
+####  1.5. <a name='-Promise.resolve'></a>类方法-Promise.resolve()
 
 将一个对象直接转为promise对象
 
@@ -347,7 +366,7 @@ promise2.then(res=>{
 })
 ```
 
-#### 类方法-Promise.reject()
+####  1.6. <a name='-Promise.reject'></a>类方法-Promise.reject()
 
 直接返回一个 reject 状态的 Promise 对象
 
@@ -363,7 +382,7 @@ promise.then(res=>{
 })
 ```
 
-#### 类方法-Promise.all()
+####  1.7. <a name='-Promise.all'></a>类方法-Promise.all()
 
 传入一个 Promise 对象数组，按数组顺序返回数据
 
@@ -424,7 +443,7 @@ Promise.all([promise1, promise2, promise3]).then(res=>{
 })
 ```
 
-#### 类方法-Promise.allSettled()
+####  1.8. <a name='-Promise.allSettled'></a>类方法-Promise.allSettled()
 
 在即使有 reject 状态的情况下，仍然返回全部结果
 
@@ -463,7 +482,7 @@ Promise.allSettled([promise1, promise2, promise3]).then(res=>{
 */
 ```
 
-#### 类方法-Promise.race()
+####  1.9. <a name='-Promise.race'></a>类方法-Promise.race()
 
 返回最先执行结束的Promise
 
@@ -521,7 +540,7 @@ Promise.race([promise1,promise2,promise3]).then(res=>{
 })
 ```
 
-#### 类方法-Promise.any()
+####  1.10. <a name='-Promise.any'></a>类方法-Promise.any()
 
 得到一个状态为 fulfilled 之后才会结束，不会因为第一个返回的状态为 reject 而直接结束
 
@@ -583,6 +602,6 @@ Promise.any([promise1,promise2,promise3]).then(res=>{
 })
 ```
 
-## Promise 的面试题
+##  2. <a name='Promise-1'></a>Promise 的面试题
 
-## Promise 的实现
+##  3. <a name='Promise-1'></a>Promise 的实现
