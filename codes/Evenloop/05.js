@@ -1,10 +1,10 @@
 Promise.resolve().then(() => {
     console.log(0);
-    // 返回的是一个thenable的，多推一次微任务
+    // thenable对象实现的then方法是一个宏任务
     return {
         then : function(resolve){
-            setTimeout(function(){
-                resolve(4)
+                setTimeout(function(){
+                    resolve(4)
             })
         }
     }
