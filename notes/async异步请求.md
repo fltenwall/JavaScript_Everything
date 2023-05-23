@@ -1,12 +1,14 @@
 <!-- vscode-markdown-toc -->
-		* 1. [快速上手](#)
-		* 2. [await](#await)
+* 1. [async](#async)
+		* 1.1. [快速上手](#)
+		* 1.2. [await](#await)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
 	autoSave=true
 	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->####  1. <a name=''></a>快速上手
+<!-- /vscode-markdown-toc -->##  1. <a name='async'></a>async
+####  1.1. <a name=''></a>快速上手
 
 async函数本身是同步执行的
 
@@ -105,7 +107,7 @@ console.log('......')
 Error: err
 */
 ```
-####  2. <a name='await'></a>await
+####  1.2. <a name='await'></a>await
 
 ```javascript
 //07.js
