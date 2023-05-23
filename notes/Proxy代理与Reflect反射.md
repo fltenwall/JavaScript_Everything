@@ -1,26 +1,48 @@
+<!-- vscode-markdown-toc -->
+	* 1. [监听对象的操作](#)
+	* 2. [Object.defineProperty](#Object.defineProperty)
+		* 2.1. [快速上手](#-1)
+		* 2.2. [缺陷](#-1)
+	* 3. [Proxy 代理](#Proxy)
+		* 3.1. [快速了解](#-1)
+		* 3.2. [get/set捕获器](#getset)
+		* 3.3. [in 捕获器](#in)
+		* 3.4. [deleteProperty 监听属性删除操作](#deleteProperty)
+		* 3.5. [apply监听函数对象的apply操作](#applyapply)
+		* 3.6. [construct 监听函数对象的 new 调用操作](#constructnew)
+	* 4. [Reflect反射](#Reflect)
+		* 4.1. [快速了解](#-1)
+		* 4.2. [Proxy的 get 与Reflect.get 的第三个参数(代理对象)：receiver](#ProxygetReflect.getreceiver)
+		* 4.3. [Proxy的 set 与Reflect.set 的第三个参数(代理对象)：receiver](#ProxysetReflect.setreceiver)
+		* 4.4. [Reflect.construct()](#Reflect.construct)
 
-### 监听对象的操作
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+###  1. <a name=''></a>监听对象的操作
 
-### Object.defineProperty
+###  2. <a name='Object.defineProperty'></a>Object.defineProperty
 
-#### 快速上手
+####  2.1. <a name='-1'></a>快速上手
 
 
-#### 缺陷
+####  2.2. <a name='-1'></a>缺陷
 
 1.无法直接监听新增、删除属性
 
 2.是直接操作原对象的属性，修改了对象本身的属性描述符
 
-### Proxy 代理
+###  3. <a name='Proxy'></a>Proxy 代理
 
-#### 快速了解
+####  3.1. <a name='-1'></a>快速了解
 
 Proxy是ES6新增的`类`, 用来创建代理对象，通过代理对象完成对原对象的监听操作，不直接监听原对象，不改变原对象的属性描述符。
 
 Proxy 提供了更多的监听操作，可以通过重写 Proxy 的捕获器来对代理对象进行操作和监听。
 
-#### get/set捕获器
+####  3.2. <a name='getset'></a>get/set捕获器
 
 ```javascript
 //04.js
@@ -62,7 +84,7 @@ fltenwall
 */
 ```
 
-#### in 捕获器
+####  3.3. <a name='in'></a>in 捕获器
 
 对象属性的存在性检查操作监听
 
@@ -88,7 +110,7 @@ true
 */
 ```
 
-#### deleteProperty 监听属性删除操作
+####  3.4. <a name='deleteProperty'></a>deleteProperty 监听属性删除操作
 
 ```javascript
 //06.js
@@ -111,7 +133,7 @@ delete proxy.age
 */
 ```
 
-#### apply监听函数对象的apply操作
+####  3.5. <a name='applyapply'></a>apply监听函数对象的apply操作
 
 ```javascript
 //07.js
@@ -132,7 +154,7 @@ proxy.apply({}, ['age'])
 对fn对象进行了apply操作
 */
 ```
-#### construct 监听函数对象的 new 调用操作
+####  3.6. <a name='constructnew'></a>construct 监听函数对象的 new 调用操作
 
 ```javascript
 //08.js
@@ -153,9 +175,9 @@ new proxy('age')
 对fn对象进行了new操作
 */
 ```
-### Reflect反射
+###  4. <a name='Reflect'></a>Reflect反射
 
-#### 快速了解 
+####  4.1. <a name='-1'></a>快速了解 
 
 Reflect是 ES6 新增的一个`对象`，它提供了很多操作对象的方法，类似Object 操作对象的方法。
 
@@ -214,7 +236,7 @@ console.log(proxy.age)
 */
 ```
 
-#### Proxy的 get 与Reflect.get 的第三个参数(代理对象)：receiver
+####  4.2. <a name='ProxygetReflect.getreceiver'></a>Proxy的 get 与Reflect.get 的第三个参数(代理对象)：receiver
 
 看下面的代码有什么问题？
 
@@ -306,7 +328,7 @@ flten
 
 为了解决同样的问题，在 set 中也需要传入`receiver`
 
-#### Proxy的 set 与Reflect.set 的第三个参数(代理对象)：receiver
+####  4.3. <a name='ProxysetReflect.setreceiver'></a>Proxy的 set 与Reflect.set 的第三个参数(代理对象)：receiver
 
 先来看下面的代码：
 
@@ -366,7 +388,7 @@ proxy.name = 'fltenwall'
 ```
 这样就可以监听到`_name`属性，且改变了`this`指向，从而不会绕过代理对象的监听和避免对目标对象的直接操作
 
-#### Reflect.construct()
+####  4.4. <a name='Reflect.construct'></a>Reflect.construct()
 
 构建函数的实例对象的隐式原型`__proto__`是指向构造函数的原型对象`prototype`的
 
