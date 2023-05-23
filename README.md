@@ -1,6 +1,4 @@
-# JavaScript_Interview_Question
-关于JavaScript的面试题
-
+# JavaScript_Interview_Everything
 #### [浏览器相关](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/浏览器相关.md)
 
 #### [Promise/Promise与异步请求](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Promise与异步请求.md)
