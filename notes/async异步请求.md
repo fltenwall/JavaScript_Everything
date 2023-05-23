@@ -7,7 +7,9 @@
 	numbering=true
 	autoSave=true
 	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->##  1. <a name='async'></a>async
+<!-- /vscode-markdown-toc -->
+
+##  1. <a name='async'></a>async
 ####  1.1. <a name=''></a>快速上手
 
 async函数本身是同步执行的
