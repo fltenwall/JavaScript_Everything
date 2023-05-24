@@ -76,6 +76,8 @@ navicat使用
 
 #### GraphQL
 
+[node.js中使用GraphQL](ttps://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/GraphQL.md)
+
 #### 自动化测试
 
 #### 运维与自动集成
@@ -109,6 +111,8 @@ bind
 负载均衡
 
 反向代理
+
+动静分离
 
 #### C 语言
 
