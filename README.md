@@ -151,7 +151,7 @@ Vue3
 
 基本数据类型
 
-[数组](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Java/数组)
+[数组](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Java/数组.md)
 
 面向对象
 
