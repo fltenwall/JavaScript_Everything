@@ -78,7 +78,7 @@ navicat使用
 
 #### GraphQL
 
-[node.js中使用GraphQL](ttps://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/GraphQL.md)
+[node.js中使用GraphQL](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/GraphQL.md)
 
 #### 自动化测试
 
