@@ -78,7 +78,7 @@ bind
 
 [栈的面试题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/算法/栈的面试题.md)
 
-[栈的Leetcode题目]()
+[栈的Leetcode题目](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/算法/栈的Leetcode题目.md)
 
 位运算
 
