@@ -1,6 +1,6 @@
 # JavaScript_Interview_Everything
 
-#### javascript核心
+### javascript核心
 
 [Promise/Promise与异步请求](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Promise与异步请求.md)
 
@@ -14,7 +14,7 @@
 
 迭代器生成器
 
-#### 浏览器渲染机制
+### 浏览器渲染机制
 
 [浏览器相关](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/浏览器相关.md)
 
