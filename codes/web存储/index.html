@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let token = localStorage.getItem('token');
+        if(!token){
+            console.log('从服务器获取值')
+            token = 'token'
+            // 设置值
+            localStorage.setItem('token',token);
+        }
+        console.log('token',token);
+
+    </script>
+</body>
+</html>
