@@ -9,3 +9,5 @@
 `graphql`实现graphql
 
 `koa-graphql`
+
+`redis`nodejs调用redis服务
