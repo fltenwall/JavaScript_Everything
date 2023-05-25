@@ -20,6 +20,6 @@ leetcode 链接 [20.有效的括号](https://leetcode.cn/problems/valid-parenthe
 输入：s = "()"
 输出：true
 
-[题解 1](Codes/算法/栈的Leetcode题目/20.有效的括号.ts)
+[题解 1](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/Codes/算法/栈的Leetcode题目/20.有效的括号.ts)
 
-[题解 2](Codes/算法/栈的Leetcode题目/20.有效的括号2.ts)
+[题解 2](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/Codes/算法/栈的Leetcode题目/20.有效的括号2.ts)
