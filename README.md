@@ -32,9 +32,15 @@
 
 [nodejs核心与架构设计](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Node/index.md)
 
-Express
+Express使用
 
-Koa
+Express 源码实现
+
+Koa使用
+
+Koa 源码实现
+
+洋葱🧅模型的实现
 
 Nest
 
@@ -66,6 +72,16 @@ bind
 
 函数柯里化
 
+### 数据结构与算法
+
+[栈](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/算法/栈.md)
+
+[栈的面试题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/算法/栈的面试题.md)
+
+[栈的Leetcode题目]()
+
+位运算
+
 ### 常用库的使用
 
 ### 常用库的源码分析
@@ -80,7 +96,18 @@ bind
 
 ### 前端工程化
 
+#### 包管理
+
+npx
+
+npnm
+#### 打包工具
+
 webpack
+
+Gulp
+
+Rollup
 
 ### 前端监控
 
@@ -100,8 +127,6 @@ webpack
 ### CSS
 
 ### Typescript
-
-### 数据结构与算法
 
 
 
