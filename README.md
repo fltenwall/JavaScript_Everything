@@ -16,7 +16,19 @@
 
 执行上下文
 
-闭包
+[闭包](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/闭包.md)
+
+[this的绑定规则](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/this的绑定规则.md)
+
+[js内部函数的this指向](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/js函数的this指向.md)
+
+[this面试题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/this面试题.md)
+
+词法作用域
+
+原型与原型链
+
+作用域与作用域链
 
 
 
@@ -81,6 +93,8 @@ bind
 [栈的Leetcode题目](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/算法/栈的Leetcode题目.md)
 
 位运算
+
+### 垃圾回收算法
 
 ### 常用库的使用
 
