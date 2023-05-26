@@ -92,6 +92,11 @@ bind
 
 [栈的Leetcode题目](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/算法/栈的Leetcode题目.md)
 
+[队列](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/算法/队列.md)
+
+[队列的面试题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/算法/队列的面试题.md)
+
+
 位运算
 
 ### 垃圾回收算法
