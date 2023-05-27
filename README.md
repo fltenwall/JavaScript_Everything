@@ -86,6 +86,8 @@ bind
 
 ### 数据结构与算法
 
+#### TypeScript版
+
 [栈](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/算法/栈.md)
 
 [栈的面试题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/算法/栈的面试题.md)
@@ -96,8 +98,20 @@ bind
 
 [队列的面试题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/算法/队列的面试题.md)
 
+[链表](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/算法/链表.md)
+
+[链表的面试题]()
+
+哈希表
+
+二叉树
+
+图
+
 
 位运算
+
+#### JavaScript版
 
 ### 垃圾回收算法
 
