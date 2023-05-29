@@ -63,6 +63,26 @@ class HashTable<T = any> {
         }
         return undefined
     }
+    // 删除数据
+    delete(key:string):T|undefined{
+        // 获取索引值的位置
+        const index = this.hashFunction(key, this.length)
+        // 获取桶
+        const bucket = this.storage[index]
+        // 判断桶是否存在
+        if(!bucket) return undefined
+        // 遍历桶
+        for (let index = 0; index < bucket.length; index++) {
+            const tuple = bucket[index];
+            const tupleKey = tuple[0]
+            const tupleValue = tuple[1]
+            if(tupleKey === key){
+                bucket.splice(index,1)
+                this.count--
+                return tupleValue
+            }
+        }
+    }
 }
 
 const hashTable = new HashTable()
