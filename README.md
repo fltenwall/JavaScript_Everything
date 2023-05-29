@@ -44,6 +44,7 @@
 
 [nodejs核心与架构设计](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Node/index.md)
 
+
 Express使用
 
 Express 源码实现
@@ -56,6 +57,12 @@ Koa 源码实现
 
 Nest
 
+### Node.js常见功能开发
+
+鉴权
+
+权限设计
+
 ### SSR
 
 ### 网络
@@ -65,6 +72,8 @@ Nest
 [网络协议常见问题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络协议常见问题.md)
 
 [三次握手🤝与四次挥手👋🏻]()
+
+socket
 
 ### 手写实现
 
@@ -100,7 +109,9 @@ bind
 
 [链表](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/算法/链表.md)
 
-[链表的面试题]()
+[链表的面试题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/算法/链表的面试题.md)
+
+哈希表
 
 哈希表
 
@@ -108,16 +119,22 @@ bind
 
 图
 
+[二分查找]([链表的面试题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/算法/二分查找.md))
+
 
 位运算
 
 #### JavaScript版
+
+#### 前端架构
 
 ### 垃圾回收算法
 
 ### 常用库的使用
 
 ### 常用库的源码分析
+
+underscore.js
 
 ### 设计模式
 
@@ -128,6 +145,10 @@ bind
 代理模式
 
 ### 前端工程化
+
+配置Eslint
+
+构建工具
 
 #### 包管理
 
@@ -143,6 +164,20 @@ Gulp
 Rollup
 
 ### 前端监控
+
+
+### 埋点
+
+
+### 跨域
+
+### 移动Web App/hybrid/JS bridge/webview
+
+
+### Flutter
+
+
+### Web 安全
 
 ### 性能优化
 
@@ -193,6 +228,9 @@ Vue3
 
 
 ### 编译原理
+
+
+### 操作系统
 
 
 ### Nginx
