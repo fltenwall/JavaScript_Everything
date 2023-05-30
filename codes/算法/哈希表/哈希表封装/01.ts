@@ -82,6 +82,7 @@ class HashTable<T = any> {
                 return tupleValue
             }
         }
+        return undefined
     }
 }
 
@@ -91,3 +92,5 @@ hashTable.put('bbb',456)
 
 console.log(hashTable.get('bbb')) //456
 console.log(hashTable.get('ccc')) //undefined
+
+console.log(hashTable.delete('aaa')) // 123

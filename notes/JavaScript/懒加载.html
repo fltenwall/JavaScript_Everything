@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            display: block;
+            /* width:400px; */
+            height:400px;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <img src="./test.png"  data-src="https://k.sinaimg.cn/www/dy/slidenews/21_img/2015_12/17327_4086726_198608.jpg/w640slw.jpg" alt="" >
+    <img src="./test.png"  data-src="https://k.sinaimg.cn/www/dy/slidenews/21_img/2015_12/17327_4086728_114356.jpg/w640slw.jpg" alt="" >
+    <img src="./test.png"  data-src="https://k.sinaimg.cn/www/dy/slidenews/21_img/2015_12/17327_4086712_499261.jpg/w640slw.jpg" alt="" >
+    <img src="./test.png"  data-src="https://k.sinaimg.cn/www/dy/slidenews/21_img/2015_12/17327_4086713_140703.jpg/w640slw.jpg" alt="" >
+    <img src="./test.png"  data-src="https://k.sinaimg.cn/www/dy/slidenews/21_img/2015_12/17327_4086715_880495.jpg/w640slw.jpg" alt="" >
+    <img src="./test.png"  data-src="https://k.sinaimg.cn/www/dy/slidenews/21_img/2015_12/17327_4086727_484003.jpg/w640slw.jpg" alt="" >
+    <img src="./test.png"  data-src="https://k.sinaimg.cn/www/dy/slidenews/21_img/2015_12/17327_4086731_309893.jpg/w640slw.jpg" alt="" >
+    <img src="./test.png"  data-src="https://k.sinaimg.cn/www/dy/slidenews/21_img/2015_12/17327_4086714_202314.jpg/w640slw.jpg" alt="" >
+    <img src="./test.png"  data-src="https://k.sinaimg.cn/www/dy/slidenews/21_img/2015_12/17327_4086709_758720.jpg/w640slw.jpg" alt="" >
+    <script>
+        let imgsNum = document.getElementsByTagName("img").length;
+        let imgs = document.getElementsByTagName("img");
+        lazyLoad()
+        window.onscroll = lazyLoad
+        function lazyLoad(){
+            // 设备视口高度,可视区域
+            let seeHeight = document.documentElement.clientHeight;
+            // 滚动条距页面顶部高度
+            let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+            for (let index = 0; index < imgsNum; index++) {
+                const img = imgs[index];
+                if(img.offsetTop < seeHeight+scrollTop){
+                    if(img.getAttribute("src") === "./test.png"){
+                        img.src = img.getAttribute("data-src")
+                    }
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
