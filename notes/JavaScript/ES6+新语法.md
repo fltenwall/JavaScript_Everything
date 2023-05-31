@@ -380,5 +380,46 @@ const a = ()=>{}
 console.log(a.__proto__ === Function.prototype) // true
 ```
 
+#### Set
+
+1.类似数组，但`数据不重复`，因此可以实现`自动去重`
+
+2.但添加对象时，特别是空对象，由于对象是引用类型，其保存的地址值并不相同，因此不是重复数据
+
+3.创建：`new Set()`,不能通过字面量
+
+```javascript
+const arr = [1,2,2,2,3,4,5,5,{},{}]
+const newArr = [...new Set(arr)]
+console.log(newArr) // [ 1, 2, 3, 4, 5, {}, {} ]
+```
+
+4.Set 常用属性与方法
+
+```javascript
+const set = new Set()
+// 添加元素
+set.add(1)
+set.add(2)
+set.add(3)
+// 删除元素
+set.delete(2)
+// 判断元素是否存在
+console.log(set.has(2)) // false
+// 查看元素个数
+console.log(set.size)  // 2
+console.log(set)// Set(2) { 1, 3 }
+// 遍历
+set.forEach(e => console.log(e)) // 1 3
+for (const e of set) {
+    console.log(e) //1 3 
+}
+// 清空
+set.clear()
+console.log(set) // Set(0) {}
+```
+
+#### WeakSet
+
 
 
