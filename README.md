@@ -6,6 +6,8 @@
 
 [async异步请求](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/async异步请求.md)
 
+手写Promise
+
 [宏任务微任务与事件循环](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/宏任务微任务与事件循环.md)
 
 [Proxy代理与Reflect反射](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Proxy代理与Reflect反射.md)
@@ -26,8 +28,10 @@
 
 词法作用域
 
+[ES6+新语法](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/JavaScript/ES6+新语法.md)
 
-作用域与作用域链
+
+[let与作用域、作用域链](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/JavaScript/let与作用域.md)
 
 [原型与原型链/利用原型实现继承](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/JavaScript/面向对象.md)
 
@@ -36,6 +40,8 @@
 [对象常用方法](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/JavaScript/对象常用方法.md)
 
 [js基础面试题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/JavaScript/基础面试题.md)
+
+网络请求
 
 JS 模块化
 
@@ -67,6 +73,8 @@ Koa 源码实现
 洋葱🧅模型的实现
 
 Nest
+
+Nust
 
 ### Node.js常见功能开发
 
@@ -270,7 +278,18 @@ Vue3
 
 动静分离
 
+### Electron
+
+### 音视频
+
+### 游戏
+
+### WebAssembly  
 ### C 语言
+
+### Rust
+
+
 
 ### Java
 
