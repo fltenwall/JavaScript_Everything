@@ -1,8 +1,13 @@
-console.log('aaa')
+// fn()
+function fn(){console.log(1)}
+var fn = function(){console.log(3)}
+fn()
 
-console.log(a)
-let a = 10
 /*
-aaa
-ReferenceError: Cannot access 'a' before initialization
+5
+5
+5
+3
+3
+3
 */
