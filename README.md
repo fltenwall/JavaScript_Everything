@@ -30,6 +30,8 @@
 
 [ES6+新语法](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/JavaScript/ES6+新语法.md)
 
+[变量提升机制](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/JavaScript/变量提升机制.md)
+
 
 [let与作用域、作用域链](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/JavaScript/let与作用域.md)
 

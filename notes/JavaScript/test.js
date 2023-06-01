@@ -1,16 +1,8 @@
-console.log(a,b)
-var a=12,b=12;
-function fn(){
-    console.log(a,b)
-    var a = b = 13
-    console.log(a,b)
-}
-fn()
-console.log(a,b)
+console.log('aaa')
 
+console.log(a)
+let a = 10
 /*
-undefined undefined
-undefined 12
-13 13
-12 13
+aaa
+ReferenceError: Cannot access 'a' before initialization
 */
