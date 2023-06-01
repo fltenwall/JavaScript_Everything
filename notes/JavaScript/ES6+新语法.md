@@ -425,5 +425,473 @@ console.log(set) // Set(0) {}
 
 2.对元素的引用是弱引用，如果某个元素没有被其他对象引用，则会被 GC 进行垃圾回收
 
+3.WeakSet 不能进行遍历，因此存储到WeakSet中的数据是不能被获取到的
+
+#### Map
+
+1.和对象有什么区别？
+
+对象的key只能是字符串和`Symbol`(es6)，即便是使用对象也作为key也会自动转为字符串`[obejct Object]`。而map的key可以是任意类型
+
+
+2.Map的使用
+
+```javascript
+const obj1 =  {
+    age:16
+} 
+const obj2 =  {
+    age:18
+} 
+
+// 创建map
+const map = new Map()
+// 存放数据
+map.set(obj1,'flten')
+console.log(map)  // Map(1) { { age: 16 } => 'flten' }
+
+// 创建map时批量存入数据
+const map2 = new Map([[obj1, 'flten'],[obj2, 'wall']])
+console.log(map2) // Map(2) { { age: 16 } => 'flten', { age: 18 } => 'wall' }
+
+// 获取值
+console.log(map.get(obj1)) // flten
+// 判断是否存在某个key
+console.log(map2.has(obj2)) // true
+// 遍历map
+map2.forEach(element => console.log(element)) //flten wall
+// 遍历map
+for (const element of map2) {
+    console.log(element) 
+    // [ { age: 16 }, 'flten' ]
+    //[ { age: 18 }, 'wall' ]
+}
+for (const [key,value] of map2) {
+    console.log(key,value)
+    // { age: 16 } flten
+    // { age: 18 } wall
+}
+// 通过key删除记录
+map2.delete(obj2)
+console.log(map2.has(obj2)) // false
+// 清空map
+map2.clear()
+// 查看map记录数
+console.log(map2.size) // 0
+```
+
+#### WeakMap
+
+1.与map的区别：
+
+(1)WeakMap 的`key只能使用对象`
+
+(2)key对对象的引用是弱引用
+
+(3)`不能进行遍历`
+
+(4)无`size`属性
+
+(5)无`clear`方法
+
+2.何为弱引用
+
+先来看下面的代码:
+
+```javascript
+const obj = {age:'flten'}
+const map = new Map()
+map.set(obj, 'flten')
+```
+
+上面的代码中，对于对象`{age:'flten'}`，其实存在两个引用：一个是变量`obj`指向了该对象，第二个是map中存入的一条记录中属性`obj`也指向了该对象，因此该对象有两处引用。当`obj = null`，想要GC 自动回收`{age:'flten'}`时，在map中对于该对象的引用依然存在，所以不会该对象不会被销毁，这就是`强引用`。
+
+而如果使用`WeakMap`，像下面的代码一样：
+
+```javascript
+const obj = {age:'flten'}
+const weakmap = new WeakMap()
+weakmap.set(obj, 'flten')
+```
+
+则`weakmap`中存入的一条记录，它的key`obj`对该对象的引用是弱引用，当`obj = null`时，`weakmap`存入的记录会自动销毁，对象`{age:'flten'}`会被 GC 自动垃圾回收。
+
+2.WeakMap的使用
+
+```javascript
+const obj1 = {
+    age:16
+} 
+const obj2 =  {
+    age:18
+} 
+
+// 创建WeakMap
+const weakMap = new WeakMap()
+weakMap.set(obj1, 'flten')
+weakMap.get(obj1)
+weakMap.has(obj1)
+weakMap.delete(obj1)
+```
+
+3.WeakMap 的应用场景
+
+vue3响应式原理中使用WeakMap作为容器，将每个响应式对象作为key
+
+#### 数组方法
+
+1.`Array.include()`，判断是否包含某个数据，相对于`indexOf`，可以判断是否包含`NaN`
+
+```javascript
+let arr = [1,2,3,4,5]
+console.log(arr.includes(3))  // true
+// 从索引为 3 的地方开始判断后面的数组中是否包含
+console.log(arr.includes(3,3)) // false
+
+console.log(arr.includes(NaN)) // true
+console.log(arr.indexOf(NaN)) // false
+```
+
+2.`flat()`数组拍平
+
+`flat()`会按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回
+
+```javascript
+const arr = [[1,2,3],[4,5,5],{'name':['a','b'], 'age':16}]
+console.log(arr.flat(3)) // [ 1, 2, 3, 4, 5, 5, { name: [ 'a', 'b' ], age: 16 } ]
+```
+
+3.`flatMap()`数组映射压缩
+
+使用映射函数映射每个元素，然后将结果压缩成一个新数组。
+
+相当于先进行`map`操作，再做`flat`的操作，但flatMap中的flat相当于`深度为1`
+
+```javascript
+const arr = [1,2,3,4,5,5]
+console.log(arr.flatMap((item)=>{
+    return item+100
+}))
+
+// [ 101, 102, 103, 104, 105, 105 ]
+```
+
+#### 对象方法
+
+1.`Object.values()`获取对象所有的值
+
+```javascript
+const obj = {
+    age : 18
+}
+
+console.log(Object.values(obj))
+console.log(Object.values([1,2,3]))
+console.log(Object.values('flten'))
+
+/*
+[ 18 ]
+[ 1, 2, 3 ]
+[ 'f', 'l', 't', 'e', 'n' ]
+*/
+```
+
+2.`Object.entries()`得到`[key,value]`数组
+
+```javascript
+const obj = {
+    age : 18
+}
+
+console.log(Object.entries(obj)) // [ [ 'age', 18 ] ]
+
+console.log(Object.entries([1,2,3])) // [ [ '0', 1 ], [ '1', 2 ], [ '2', 3 ] ]
+```
+
+3.`Object.getOwnPropertyDescriptors`获取对象的属性描述符
+
+```javascript
+const obj = {
+    age : 18
+}
+
+console.log(Object.getOwnPropertyDescriptors(obj))
+
+/*
+{
+  age: { value: 18, writable: true, enumerable: true, configurable: true }
+}
+*/
+```
+
+4.`Object.formEntries`将`entries`数组即`[[key,value]]`，转化为对象
+
+```javascript
+const obj = {
+    age:16,
+    job:'boss'
+}
+const entries = Object.entries(obj)
+console.log(entries) // [ [ 'age', 16 ], [ 'job', 'boss' ] ]
+console.log(Object.fromEntries(entries)) // { age: 16, job: 'boss' }
+```
+
+5.`for...in`遍历对象key
+
+在ES11中，对其进行了标准化
+
+```javascript
+const obj = {
+    age:16,
+    job:'boss'
+}
+for (const key in obj) {
+    console.log(key)
+}
+/*
+age
+job
+*/
+```
+#### String
+
+1.`padStart`和`padEnd`
+
+ES8中增加了 `padStart` 和 `padEnd` 方法，分
+别是对字符串的首尾进行填充
+
+```javascript
+const ID = '13776543210'
+console.log(ID.padStart(15,'*')) //****13776543210
+console.log(ID.padEnd(15,'*'))  // 13776543210****
+```
+
+2.`trimStart`和 `trimEnd`去除前面或者后面空格
+
+`trim`是去除前后所有空格
+
+```javascript
+const club = '   nba   '
+console.log(club.trim())  // 'nba'
+console.log(club.trimStart())  // 'nba   '
+console.log(club.trimEnd())  // '   nba'
+```
+
+3.`replaceAll`
+
+返回一个新的替换过的字符串
+
+```javascript
+let str= 'aaaddcc'
+let newStr = foo.replaceAll('a','p')
+console.log(newStr) // pppddcc
+```
+
+#### BigInt
+
+可以表示超过`MAX_SAFE_INTEGER`的大数字，BitInt的表示方法是在数值的后面加上n
+
+```javascript
+const bigInt = 448488575757575757n
+console.log(bigInt + 10000n) // 448488575757585757n
+```
+
+#### 可选链操作符`?.`
+
+`?.`判断前面的对象是否存在，可以使得在进行`null`和`undefined`判断时更加清晰和简洁，而不是直接报错。
+
+```javascript
+const obj = {
+    age:20
+}
+
+console.log(obj?.name) // undefined
+```
+
+#### 空值合并操作符`??`
+
+`||`逻辑或的判断会有一些错误，比如会将''空字符串和 0 转化为`null`或`undefined`，这时用`??`判断就更为准确。
+
+```javascript
+const str = ''
+
+const st1 = str || 'flten'
+const st2 = str ?? 'flten'
+console.log(st1) // 'flten'
+console.log(st2) // ''
+
+const str2 = false
+
+const st3 = str2 || 'flten'
+const st4 = str2 ?? 'flten'
+
+console.log(st3) //'flten'
+console.log(st4)  //  false
+
+const str3 = undefined
+const str4 = null
+
+const st5 = str3 || 'flten'
+const st6 = str3 ?? 'flten'
+
+console.log(st5) // 'flten'
+console.log(st6)  // 'flten'
+
+const st7 = str4 || 'flten'
+const st8 = str4 ?? 'flten'
+
+console.log(st7) // 'flten'
+console.log(st8)  // 'flten'
+
+```
+
+#### globalThis全局对象
+
+之前不同的环境获取的方式是不一样的。在浏览器中可以通过this、`window`来获取；而在Node中需要通过`global`来获取
+
+么在ES11中对获取全局对象进行了统一的规范：无论在什么环境中，都使用`globalThis`
+
+#### FinalizationRegistry垃圾回收时的回调
+
+在注册表中注册的对象，在该对象被垃圾回收时可以通过`FinalizationRegistry`执行一个回调，可以监听数据的垃圾回收。但在 ES2021 才支持，要注意兼容性。
+
+以下代码需要在浏览器中运行才能看到打印。
+
+```javascript
+// 创建注册表
+const registryTable = new FinalizationRegistry((obj)=>{
+    console.log(`${obj}对象被垃圾回收了！`)
+})
+
+let obj1 = {age:18}
+let obj2 = {age:28}
+// 注册到registry中
+registryTable.register(obj1,'obj1')
+registryTable.register(obj2,'obj2')
+
+obj1=null
+obj2=null
+
+/*
+obj2对象被垃圾回收了！
+test.html:18 obj1对象被垃圾回收了！
+*/
+```
+
+如果对象被其他对象强引用，则即便将该对象设置为`null`，该对象也不会被销毁
+
+```javascript
+// 创建注册表
+const registryTable = new FinalizationRegistry((obj)=>{
+    console.log(`${obj}对象被垃圾回收了！`)
+})
+
+let obj1 = {age:18}
+// obj2引用了obj1
+let obj2 = obj1
+// 注册到registry中
+registryTable.register(obj1,'obj1')
+
+obj1=null
+```
+
+我们也可以验证`WeakMap`是弱引用
+
+```javascript
+// 创建注册表
+const registryTable = new FinalizationRegistry((obj)=>{
+    console.log(`${obj}对象被垃圾回收了！`)
+})
+
+let obj1 = {age:18}
+let weakMap = new WeakMap()
+weakMap.set(obj1, 'flten')
+// 注册到registry中
+registryTable.register(obj1,'obj1')
+
+obj1=null
+
+/*
+obj1对象被垃圾回收了！
+*/
+```
+
+#### WeakRef
+
+将对象作为`弱引用`
+
+```javascript
+const registryTable = new FinalizationRegistry((obj)=>{
+    console.log(`${obj}对象被垃圾回收了！`)
+})
+
+let obj1 = {age:18}
+let obj2 = new WeakRef(obj1)
+// 注册到registry中
+registryTable.register(obj1,'obj1')
+obj1=null
+// obj1对象被垃圾回收了！
+
+setTimeout(function(){
+    // 若引用到的对象已被垃圾回收，返回的是undefined
+    console.log(obj2.deref()) // undefined
+},5000)
+```
+
+#### 逻辑或赋值 `||=`
+
+```javascript
+let obj = undefined
+
+obj ||= 'flten'
+
+console.log(obj) //flten
+```
+
+等价于
+
+```javascript
+let obj = undefined
+let obj2 = obj || 'fltenw'
+```
+
+#### 逻辑与赋值 `&&=`
+```javascript
+let obj = 'flten'
+
+obj &&= 'wall'
+
+console.log(obj) //wall
+```
+
+```javascript
+let obj = {
+    foo:function(){
+        return 'flten'
+    }
+}
+
+let obj2 = {}
+obj2 &&= obj.foo
+console.log(obj2) 
+```
+#### 逻辑空赋值 `??=`
+
+```javascript
+let obj = {
+    age :18
+}
+
+let age = undefined
+age ??= obj.age
+console.log(age)  // 18
+```
+
+
+
+
+
+
+
 
 

@@ -12,27 +12,21 @@
             overflow: hidden;
         }
         .container{
-            height: 100%;
-            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
         }
         .center{
-           margin: 0 200px;
-           min-height: 300px;
-           background-color: antiquewhite;
+            flex: 1;
+            min-height: 300px;
+            background-color: bisque;
         }
         .left,
         .right{
-            position: absolute;
-            top:0;
-            width: 200px;
+            flex:0 0 200px;
             height: 200px;
             background-color: aquamarine;
-        }
-        .left{
-            left: 0;
-        }
-        .right{
-            right: 0;
         }
         
 

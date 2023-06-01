@@ -13,15 +13,17 @@
     <button>4</button>
     <button>5</button>
     <script>
-        const btns = document.getElementsByTagName('button')
-        for (let index = 0; index < btns.length; index++) {
-            (function(index){
-                const element = btns[index];
-                element.onclick = function(){
-                    console.log(index)
-                }
-            })(index)
-        }
+// 创建注册表
+// 创建注册表
+let obj = {
+    age :18
+}
+
+let age = undefined
+age ??= obj.age
+console.log(age)  // 18
+
+
     </script>
 </body>
 </html>

@@ -96,9 +96,21 @@ class HashTable<T = any> {
         }
         return undefined
     }
-    // 扩容
+    // 获取到目标数字最近的一个数字
+    private getPrime(newLength:number):number{
+        // 保证扩容后的数组是扩大质数倍
+        let currentNum = newLength
+        while(!this.isPrime(currentNum)){
+            currentNum++
+        }
+        return currentNum
+    }
+    // 扩容/缩容
     private resize(newLength:number){
-        this.length = newLength
+        let prime = this.getPrime(newLength)
+        // 最小容量为 7
+        if(prime < 7) prime = 7
+        this.length = prime
         // 将原来的所有数据全部重新进行哈希并放入新数组
         // 获取到原来的数据
         const oldStorage = this.storage
@@ -116,6 +128,13 @@ class HashTable<T = any> {
             }
         })
     }
+    private isPrime(num:number):boolean{
+        const numSquare = Math.sqrt(num)
+        for (let index = 2; index <= numSquare; index++) {
+            if(num % index === 0) return false
+        }
+        return true
+    }
 }
 
 const hashTable = new HashTable()
@@ -126,3 +145,15 @@ console.log(hashTable.get('bbb')) //456
 console.log(hashTable.get('ccc')) //undefined
 
 console.log(hashTable.delete('aaa')) // 123
+
+hashTable.put('cc',123)
+hashTable.put('ss',456)
+hashTable.put('ww',123)
+hashTable.put('vv',456)
+hashTable.put('xx',123)
+hashTable.put('zz',456)
+
+hashTable.put('pp',123)
+hashTable.put('ll',456)
+
+console.log(hashTable)
