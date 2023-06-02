@@ -25,7 +25,7 @@
             }
             return _debounce
         }
-        const debounceFn = new debounce(function(event){
+        const debounceFn = debounce(function(event){
             console.log(event)
         },2000)
         const Input = document.querySelector('input')
