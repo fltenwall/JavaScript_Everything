@@ -10,26 +10,18 @@
     <button>取消</button>
     <input type="text" class="">
     <script>
-        function debounce(callback, time, immediate = true){
+        function debounce(callback, time){
             let timer = null
-            let isImmediate = false
             const _debounce = function(...args){
                 if(timer) clearTimeout(timer)
-                if(immediate && !isImmediate) {
-                    callback.apply(this, args)
-                    isImmediate = true
-                    return
-                }
                 timer = setTimeout(()=>{
                     callback.apply(this,args)
                     timer = null
-                    isImmediate = false
                 },time)
             }
             _debounce.cancle = function(){
                 console.log('已取消延时执行函数')
                 if(timer) timer = null
-                isImmediate = false
             }
             return _debounce
         }

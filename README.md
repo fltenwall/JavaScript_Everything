@@ -94,7 +94,7 @@ socket
 
 ### 手写实现
 
-[防抖函数]()
+[防抖函数](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/手写实现/防抖.md)
 
 [节流函数]()
 
