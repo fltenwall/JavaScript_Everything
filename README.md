@@ -112,6 +112,8 @@ new
 
 函数柯里化
 
+compone
+
 Promise
 
 Symbol

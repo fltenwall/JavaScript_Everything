@@ -10,44 +10,32 @@
     <button>取消</button>
     <input type="text" class="">
     <script>
-        function debounce(callback, time, immediate = true){
-            let timer = null
-            let isImmediate = false
-            const _debounce = function(...args){
-                return new Promise((resolve, reject)=>{
-                    try {
-                        if(timer) clearTimeout(timer)
-                        let res;
-                        if(immediate && !isImmediate) {
-                            res = callback.apply(this, args)
-                            isImmediate = true
-                            resolve(res)
-                        }
-                        timer = setTimeout(()=>{
-                            res = callback.apply(this,args)
-                            resolve(res)
-                            timer = null
-                            isImmediate = false
-                        },time)
-                    } catch (error) {
-                        throw new Error(error)
-                    }
-                })
+        function throttle(callback, interval, immediate = true){
+            let startTime = 0
+            const _throttle = function(...args){
+                const nowTime = new Date()
+                // 对立即执行进行控制
+                if(!immediate && startTime === 0){
+                    startTime = nowTime
+                }
+                // 通过时间计算确定频率
+                let waitTime = interval - (nowTime - startTime)
+                if(waitTime <= 0){
+                    callback.apply(this, args)
+                    startTime = nowTime
+                }
             }
-            _debounce.cancle = function(){
-                console.log('已取消延时执行函数')
-                if(timer) timer = null
-                isImmediate = false
-            }
-            return _debounce
+            return _throttle
         }
-
-        const debounceFn = debounce(function(name,age){
-            return `${name} is ${age} years old`
-        },2000)
-        debounceFn('flten',20).then(res=>{
-            console.log('This is the result: ',res)
-        })
+        const debounceFn = throttle(function(event){
+            console.log(event)
+        },1000, false)
+        const Input = document.querySelector('input')
+        const Button = document.querySelector('button')
+        Input.oninput = debounceFn
+        Button.onclick = function(){
+            debounceFn.cancle()
+        }
     </script>
 </body>
 </html>
