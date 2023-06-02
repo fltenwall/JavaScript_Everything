@@ -108,7 +108,15 @@ call
 
 bind
 
+new
+
 函数柯里化
+
+Promise
+
+Symbol
+
+
 
 ### 数据结构与算法
 
@@ -197,6 +205,8 @@ Rollup
 ### 跨域
 
 ### 移动Web App/hybrid/JS bridge/webview
+
+[概述](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Hybrid/概览.md)
 
 
 ### Flutter
