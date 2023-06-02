@@ -16,8 +16,6 @@
 
 迭代器生成器
 
-执行上下文
-
 [闭包](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/闭包.md)
 
 [this的绑定规则](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/this的绑定规则.md)
@@ -25,8 +23,6 @@
 [js内部函数的this指向](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/js函数的this指向.md)
 
 [this面试题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/this面试题.md)
-
-词法作用域
 
 [ES6+新语法](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/JavaScript/ES6+新语法.md)
 
