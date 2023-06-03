@@ -1,21 +1,45 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="app">
+    <h1>{{message}}</h1>
+    <button @click="message = 'bad'">改变数据</button>
+    <h1>{{info.city.name}}</h1>
+    <button @click="info.city.name = '北京'">改变info数据</button>
+  </div>
 </template>
+
+<script>
+import { reactive, ref, watch } from 'vue'
+
+export default{
+  setup(){
+    const message = ref('good')
+    const info = reactive({
+      name : 'fltenwall',
+      city: {
+        name: 'ShenZhen'
+      }
+    })
+    watch(message, (newValue, oldValue)=>{
+      console.log(newValue, oldValue)
+    })
+    // watch(info, (newValue, oldValue)=>{
+    //   console.log(newValue, oldValue)
+    // },{
+    //   immediate: true
+    // })
+    watch(()=>({...info}), (newValue, oldValue)=>{
+      console.log(newValue, oldValue)
+    },{
+      immediate:true,
+      deep:true,
+    })
+    return {
+      message,
+      info,
+    }
+  }
+}
+</script>
 
 <style scoped>
 header {

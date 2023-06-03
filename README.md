@@ -272,7 +272,7 @@ Docker
 
 Vue2
 
-Vue3
+[Vue3中的 Compostion API](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/setup.md)
 
 ### React
 
