@@ -1,14 +1,31 @@
-let x = [12, 23];
-const fn = function(y){
-    y[0] = 100;
-    y = 100;
-    y[1] = 200;
-    console.log(y);
-};
-fn(x);
-console.log(x)
+async function async1(){
+    console.log('async1 start')
+    await async2()
+    console.log('async1 end')
+}
+async function async2(){
+    console.log('async2')
+}
+console.log('script start')
+setTimeout(function(){
+    console.log('setTimeout')
+},0)
+async1()
+new Promise(function(resolve){
+    console.log('promise1')
+    resolve()
+}).then(function(){
+    console.log('promise2')
+})
+console.log('script end')
 
 /*
-100
-[ 100, 23 ]
+console.log('promise1')
+console.log('async1 start')
+console.log('async2')
+console.log('promise1')
+console.log('script end')
+console.log('async1 end')
+console.log('promise2')
+console.log('setTimeout')
 */
