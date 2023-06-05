@@ -5,25 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        html,body{
+            height:100%;
+        }
+    </style>
 </head>
 <body>
-    <button>1</button>
-    <button>2</button>
-    <button>3</button>
-    <button>4</button>
-    <button>5</button>
+
     <script>
-// 创建注册表
-// 创建注册表
-let obj = {
-    age :18
-}
-
-let age = undefined
-age ??= obj.age
-console.log(age)  // 18
-
-
+        let body = document.body;
+        body.addEventListener('click', function(){
+            Promise.resolve().then(()=>{
+                console.log(1)
+            })
+            console.log(2)
+        })
+        body.addEventListener('click', function(){
+            Promise.resolve().then(()=>{
+                console.log(3)
+            })
+            console.log(4)
+        })
     </script>
 </body>
+
 </html>
