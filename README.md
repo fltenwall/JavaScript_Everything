@@ -145,7 +145,7 @@ Symbol
 
 图
 
-[二分查找]([链表的面试题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/算法/二分查找.md))
+[二分查找](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/算法/二分查找.md)
 
 
 位运算
