@@ -7,7 +7,8 @@
 import { inject } from 'vue'
 export default {
     setup(){
-        const name = inject('name')
+        // 第二个参数为默认值
+        const name = inject('name', 'fltenwal')
         return {
             name
         }

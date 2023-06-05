@@ -19,14 +19,16 @@ export default{
         name: 'ShenZhen'
       }
     })
-    watch(message, (newValue, oldValue)=>{
+    const name = ref('flten')
+    const age = ref(20)
+    watch([name ,age], (newValue, oldValue)=>{
       console.log(newValue, oldValue)
     })
-    // watch(info, (newValue, oldValue)=>{
-    //   console.log(newValue, oldValue)
-    // },{
-    //   immediate: true
-    // })
+    watch(info, (newValue, oldValue)=>{
+      console.log(newValue, oldValue)
+    },{
+      immediate: true
+    })
     watch(()=>({...info}), (newValue, oldValue)=>{
       console.log(newValue, oldValue)
     },{
