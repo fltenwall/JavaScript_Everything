@@ -96,11 +96,11 @@ socket
 
 [防抖函数](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/手写实现/防抖.md)
 
-[节流函数]()
+[节流函数](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/手写实现/节流函数.md)
 
-[深拷贝]()
+[深拷贝](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/手写实现/深拷贝.md)
 
-[事件总线]()
+[事件总线](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/手写实现/事件总线.md)
 
 apply
 
