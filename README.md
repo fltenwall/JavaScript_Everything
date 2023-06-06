@@ -39,6 +39,8 @@
 
 [js基础面试题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/JavaScript/基础面试题.md)
 
+[跨域解决方案](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/跨域.md)
+
 网络请求
 
 JS 模块化
@@ -203,8 +205,6 @@ Rollup
 
 ### 埋点
 
-
-### 跨域
 
 ### 移动Web App/hybrid/JS bridge/webview
 

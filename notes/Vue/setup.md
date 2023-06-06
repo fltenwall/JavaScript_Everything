@@ -1,4 +1,6 @@
 
+### Vue3 中的 Composition API
+
 #### options api的弊端
 
 代码结构分散，对同一个数据的不同操作分散到了不同的options选项中。
@@ -609,6 +611,140 @@ watch(()=>({...info}), (newValue, oldValue)=>{
       console.log(newValue, oldValue)
     })
 ```
+
+#### setup中使用watchEffect
+
+1. 传入的函数第一次会自动执行
+2. 自动收集函数内部所有依赖过的响应式数据，无须向`watch`指定
+3. 可以收集多个依赖，其中一个依赖数据改变时，就会自动执行回调
+
+```javascript
+<template>
+  <div class="app">
+    <h1>{{counter}}</h1>
+    <button @click="counter++">增加计数</button>
+  </div>
+</template>
+
+<script>
+import { ref, watchEffect } from 'vue'
+
+export default{
+  setup(){
+    const counter = ref(10)
+    watchEffect(()=>{
+      console.log(counter.value)
+    })
+    return {
+      counter,
+    }
+  }
+}
+</script>
+```
+
+设置停止监听：达到某个阈值停止监听
+
+watchEffect会返回一个停止监听对象，调用它就可以停止监听
+
+```javascript
+const stopWatchEffect= watchEffect(()=>{
+  console.log(counter.value)
+  if(counter.value > 15){
+    stopWatchEffect()
+  }
+})
+```
+
+上面的函数在`counter`的值达到 15 后就会停止监听
+
+### setup语法糖
+#### 基本特点
+
+1. 不再需要 components 选项，导入的组件直接引入就可以使用
+2. 不需要将声明的变量通过`return`出去，顶层声明的变量都会直接暴露给模板
+3. 建议将`<script setup>`放在模板前面
+```javascript
+<script setup>
+import { ref, watchEffect } from 'vue'
+
+const counter = ref(10)
+const stopWatchEffect= watchEffect(()=>{
+  console.log(counter.value)
+  if(counter.value > 15){
+    stopWatchEffect()
+  }
+})
+</script>
+
+<template>
+  <div class="app">
+    <h1>{{counter}}</h1>
+    <button @click="counter++">增加计数</button>
+  </div>
+</template>
+```
+
+#### 通过函数defineProps定义接收的数据类型
+
+无须引用，可以直接在组件中使用
+
+父组件传递必须按照子组件定义的类型进行传递
+
+```javascript
+const props = defineProps({
+    name : {
+        type: String,
+        default: '',
+    },
+    age : {
+        type: Number,
+        default: 0, 
+    }
+})
+```
+
+#### 需要使用defineExpose暴露子组件的对象/函数给父组件
+
+必须通过defineExpose暴露子组件的对象/函数给父组件，父组件才能通过`ref`获取子组件的元素对象，然后调用这些暴露的函数和对象
+
+子组件
+```javascript
+const info = {
+    age : 19,
+}
+function childFn(){
+    console.log('childFn')
+}
+defineExpose({
+    childFn,
+    info,
+})
+```
+
+父组件
+```javascript
+<template>
+  <div class="app">
+    <Info :name="name" :age="age" ref="infoRef"></Info>
+  </div>
+</template>
+
+<script setup>
+import Info from './components/Info.vue'
+import { onMounted, ref } from 'vue'
+
+const name = ref('flten1')
+const age = ref(17)
+
+const infoRef = ref()
+onMounted(()=>{
+  infoRef.value.childFn()
+  console.log(infoRef.value.info)
+})
+</script>
+```
+
 
 
 

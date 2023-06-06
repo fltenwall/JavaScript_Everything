@@ -1,17 +1,27 @@
 <template>
     <div>
-        <h1>This is {{name}}.</h1>
+        <h1>This is {{ name }}, he's {{ age }} years old.</h1>
     </div>
 </template>
-<script>
-import { inject } from 'vue'
-export default {
-    setup(){
-        // 第二个参数为默认值
-        const name = inject('name', 'fltenwal')
-        return {
-            name
+<script setup>
+    const props = defineProps({
+        name : {
+            type: String,
+            default: '',
+        },
+        age : {
+            type: Number,
+            default: 0, 
         }
+    })
+    const info = {
+        age : 19,
     }
-}
+    function childFn(){
+        console.log('childFn')
+    }
+    defineExpose({
+        childFn,
+        info,
+    })
 </script>

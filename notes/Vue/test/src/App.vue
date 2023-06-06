@@ -1,45 +1,44 @@
 <template>
   <div class="app">
-    <h1>{{message}}</h1>
-    <button @click="message = 'bad'">改变数据</button>
-    <h1>{{info.city.name}}</h1>
-    <button @click="info.city.name = '北京'">改变info数据</button>
+    <Info :name="name" :age="age" ref="infoRef"></Info>
+    <router-view></router-view>
+    <div class="nav">
+      <!-- 路由链接 -->
+      <router-link to="home">首页</router-link>
+      <router-link to="about">关于</router-link>
+      <span @click="clickUser">我的</span>
+      <button @click="back">返回</button>
+    </div>
   </div>
 </template>
 
-<script>
-import { reactive, ref, watch } from 'vue'
+<script setup>
+import Info from './components/Info.vue'
+import { onMounted, ref } from 'vue'
+import { useRouter } from 'vue-router'
 
-export default{
-  setup(){
-    const message = ref('good')
-    const info = reactive({
-      name : 'fltenwall',
-      city: {
-        name: 'ShenZhen'
-      }
-    })
-    const name = ref('flten')
-    const age = ref(20)
-    watch([name ,age], (newValue, oldValue)=>{
-      console.log(newValue, oldValue)
-    })
-    watch(info, (newValue, oldValue)=>{
-      console.log(newValue, oldValue)
-    },{
-      immediate: true
-    })
-    watch(()=>({...info}), (newValue, oldValue)=>{
-      console.log(newValue, oldValue)
-    },{
-      immediate:true,
-      deep:true,
-    })
-    return {
-      message,
-      info,
+const name = ref('flten1')
+const age = ref(17)
+
+const infoRef = ref()
+onMounted(()=>{
+  infoRef.value.childFn()
+  console.log(infoRef.value.info)
+})
+
+const router = useRouter()
+function clickUser(){
+  router.push({
+    path:'/about',
+    query:{
+      name:'flten',
+      age:18,
     }
-  }
+  })
+}
+
+function back(){
+    router.back()
 }
 </script>
 

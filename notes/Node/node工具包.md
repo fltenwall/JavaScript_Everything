@@ -11,3 +11,5 @@
 `koa-graphql`
 
 `redis`nodejs调用redis服务
+
+`socket.io`socket服务
