@@ -29,4 +29,8 @@ const router = createRouter({
     ]
 })
 
+router.beforeEach(()=>{
+    return '/login'
+})
+
 export default router

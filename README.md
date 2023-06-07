@@ -41,6 +41,8 @@
 
 [跨域解决方案](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/跨域.md)
 
+[V8内存管理机制](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/V8垃圾回收机制.md)
+
 网络请求
 
 JS 模块化
@@ -275,6 +277,8 @@ Vue2
 [Vue3中的 Compostion API](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/setup.md)
 
 [vue-router的使用](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/vue-router/基本使用.md)
+
+[vuex的使用](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/vuex/vuex的基本使用.md)
 
 ### React
 
