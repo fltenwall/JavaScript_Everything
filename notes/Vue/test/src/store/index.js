@@ -1,4 +1,5 @@
 import {createStore} from 'vuex'
+import userState from './modules/user'
 
 const store = createStore({
     state: ()=>({
@@ -7,7 +8,8 @@ const store = createStore({
             {id:'1',age:18},
             {id:'2',age:15},
             {id:'3',age:14},
-        ]
+        ],
+
     }),
     getters:{
         totalAges(state){
@@ -29,8 +31,13 @@ const store = createStore({
             state.counter++
         },
     },
+    actions:{
+        incrementAction(context){
+            context.commit('increment')
+        },
+    },
     modules:{
-
+        user:userState,
     }
 })
 

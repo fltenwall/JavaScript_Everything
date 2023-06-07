@@ -380,6 +380,176 @@ const { increment} = newMutations
 
 ### actions
 
-如何有异步操作需要在vuex中执行，应该讲异步操作放入`actions`
+#### actions和mutations的区别
 
-`actions`需要通过`dispatch`提交`mutation`，进而改变状态
+1. 如何有异步操作需要在vuex中执行，应该讲异步操作放入`actions`;mutations中只能放入同步操作
+
+ 2. `actions`需要通过`commit`提交`mutation`，进而改变状态；mutaions中可以直接修改状态；
+  
+  在组件中使用时，对于`mutation`可以直接`commit`,但对于`actions`是`dispatch`提交`action`操作
+
+#### actions 的基本使用(options中)
+
+```javascript
+const store = createStore({
+    state: ()=>({
+        counter: 1,
+    }),
+    mutations:{
+        increment(state){
+            state.counter++
+        },
+    },
+    actions:{
+        incrementAction(context){
+            context.commit('increment')
+        },
+    },
+})
+```
+组件中使用
+
+```html
+<script>
+export default {
+  methods:{
+    increment(){
+      this.$store.dispatch('incrementAction')
+    }
+  }
+}
+</script>
+```
+
+#### setup中使用
+
+```html
+<script setup>
+import { useStore } from 'vuex';
+const store = new useStore()
+
+function incrementAction(){
+  store.dispatch('incrementAction')
+}
+
+function updateInfoAction(payload){
+  store.dispatch('updateInfoAction',payload)
+}
+</script>
+```
+
+### 映射到组件中
+
+#### options 中使用
+
+```javascript
+    mutations:{
+        increment(state){
+            state.counter++
+        },
+        updateInfo(state,payload){
+            state.info.age = payload
+        }
+    },
+    actions:{
+        incrementAction(context){
+            context.commit('increment')
+        },
+        updateInfoAction(context, payload){
+            context.commit('updateInfo',payload)
+        }
+    },
+```
+组件中使用
+
+```html
+<template>
+  <div class="app">
+    <h1>{{ $store.state.counter }}</h1>
+    <button @click="incrementAction">改变计数</button>
+    <h1>{{ $store.state.info.age }}</h1>
+    <button @click="updateInfoAction(27)">改变数据</button>
+  </div>
+</template>
+<script>
+import { mapActions } from 'vuex';
+export default {
+  methods:{
+    ...mapActions(['incrementAction', 'updateInfoAction'])
+  }
+}
+</script>
+```
+
+#### setup 中使用
+
+```html
+<script setup>
+import { useStore, mapActions } from 'vuex';
+const store = new useStore()
+
+const actions= mapActions(['incrementAction','updateInfoAction'])
+const newActions = {}
+Object.keys(actions).forEach((actionName)=>{
+  newActions[actionName] = actions[actionName].bind({$store:store})
+})
+const {incrementAction,updateInfoAction } = newActions
+</script>
+```
+
+### Modules
+
+作用：给`store`划分模块，将相关的`state`，`mutations`,`actions`放到同一个模块中
+
+### 模块的基本使用
+
+抽离出`user`到一个单独的`store/modules/user.js`文件中：
+
+```javascript
+export default {
+    state:()=>({
+        info:{
+            age:20
+        }
+    }),
+    mutations:{
+        updateInfo(state,payload){
+            state.info.age = payload
+        }
+    },
+    actions:{
+        updateInfoAction(context, payload){
+            context.commit('updateInfo',payload)
+        }
+    },
+}
+```
+
+在store文件中引入：
+```javascript
+import {createStore} from 'vuex'
+import userState from './modules/user'
+
+const store = createStore({
+    state: ()=>({
+        counter: 1,
+    }),
+    modules:{
+        user:userState,
+    }
+})
+
+export default store
+```
+在组件中使用时，要在对象获取时加一层模块：
+
+```javascript
+<template>
+  <div class="app">
+    <h1>{{ $store.state.user.info.age }}</h1>
+  </div>
+</template>
+```
+
+
+

@@ -272,13 +272,13 @@ Docker
 
 ### Vue
 
-Vue2
-
 [Vue3中的 Compostion API](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/setup.md)
 
 [vue-router的使用](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/vue-router/基本使用.md)
 
-[vuex的使用](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/vuex/vuex的基本使用.md)
+[vuex状态管理的使用](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/vuex/vuex的基本使用.md)
+
+[pinia状态管理的使用](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/Pinia/pinia的基本使用.md)
 
 ### React
 
