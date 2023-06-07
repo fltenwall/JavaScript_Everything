@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">增加内存使用</button>
+    <script>
+        let btn = document.getElementById('btn')
+        btn.onclick = fn()
+        function Person(name){this.name = name}
+        function fn(){
+            var arr = []
+            for (let index = 0; index < 10000; index++) {
+                arr.push(new Person(index))
+            }
+            console.log(arr)
+        }
+    </script>
+</body>
+</html>
