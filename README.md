@@ -37,7 +37,9 @@
 
 [对象常用方法](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/JavaScript/对象常用方法.md)
 
-[js基础面试题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/JavaScript/基础面试题.md)
+[基础面试题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/JavaScript/基础面试题.md)
+
+[js基础面试题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/JavaScript/js基础面试题.md)
 
 [跨域解决方案](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/跨域.md)
 
@@ -57,11 +59,21 @@ JS 模块化
 
 ### 浏览器
 
-[web存储](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/web存储.md)
+[web存储 cook/seesion/webstorage](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/web存储.md)
+
+### Web 安全
+
+[常见攻击手段及规避 XSS/CSRF/点击劫持/DDOS/SQL注入](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/web安全/常见攻击手段及规避.md)
+
+HTTP劫持
+
+
 
 ### Node.js
 
 [nodejs核心与架构设计](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Node/index.md)
+
+
 
 
 Express使用
@@ -215,18 +227,6 @@ Rollup
 
 ### Flutter
 
-
-### Web 安全
-
-XSS跨站脚本攻击
-
-CSRF跨站点请求伪造
-
-DDOS分布式拒绝服务
-
-HTTP劫持
-
-SQL注入
 
 ### 性能优化
 
