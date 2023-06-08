@@ -45,17 +45,17 @@
 
 [V8内存管理机制](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/V8垃圾回收机制.md)
 
+JS 模块化
+
+函数式编程
+
+### 前后端通信
+
 [网络请求 ajax/axios/fetch](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络请求/网络请求.md)
 
 [HTTP请求方式的区别](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络请求/HTTP请求方式的区别.md)
 
 [实现ajax的并行与串行](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络请求/实现ajax的并行与串行.md)
-
-JS 模块化
-
-函数式编程
-
-
 
 ### 浏览器渲染机制
 
