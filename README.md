@@ -71,7 +71,11 @@ HTTP劫持
 
 ### Node.js
 
-[nodejs核心与架构设计](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Node/index.md)
+[nodejs核心与架构设计](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Node/01.node核心概览.md)
+
+[架构优化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Node/02.架构优化.md)
+
+[登录校验方案 cookie+session/JWT/SSO](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Node/登录校验方案.md)
 
 
 
