@@ -165,11 +165,9 @@ BFF 中间层
 
 微前端
 
+低代码
+
 跨端方案
-
-### 垃圾回收算法
-
-### 常用库的使用
 
 ### 常用库的源码分析
 
@@ -230,14 +228,22 @@ SQL注入
 
 ### 性能优化
 
+[首屏优化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/性能优化/01.HTML首屏优化.md)
+
+[前端性能指标及评测](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/性能优化/前端性能指标.md)
+
+[vue优化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/优化/vue优化.md)
+
+[性能优化经典问题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/性能优化/性能问题面试题.md)
+
 ### 脚手架实现
 
 
 ### 组件库开发
 
-### 微前端
+### 垃圾回收算法
 
-### 低代码
+### 常用库的使用
 
 ### 前端 AI 辅助
 
@@ -279,6 +285,10 @@ Docker
 [vuex状态管理的使用](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/vuex/vuex的基本使用.md)
 
 [pinia状态管理的使用](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/Pinia/pinia的基本使用.md)
+
+[vue优化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/优化/vue优化.md)
+
+[vue在工作中遇到的问题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/vue在工作中遇到的问题.md)
 
 ### React
 
