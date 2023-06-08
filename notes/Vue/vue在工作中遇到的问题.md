@@ -20,58 +20,7 @@ vue2本身是用一个`with`，无法避免的内存泄漏
 1. 在列表页缓存已滚动的页面数据和 ScrollTop 的滚动值，再次返回时，使用缓存数据渲染组件，执行ScrollTop(value)，滚动到原来的位置。
 2. MPA + webview. 使用多页应用，每个包对应一个单独的页面，跳转页面时打开一个新的webview，原来的页面依然保留，不会被销毁，新页面只是覆盖在原来的页面上，页面返回时原来的页面还存在。
 
-#### 统一监听vue组件报错
 
-1. `window.onerror`全局监听所有 JS 的报错，但问题是无法识别vue中的错误
 
-在最上层的`App.vue`中进行全局监听：
-
-```html
-<script>
-export default {
-    mounted(){
-        /**
-         * msg 错误信息
-         * source 报错的文件
-         * line 哪一行报错
-         * column 哪一列报错
-         * error 错误的对象实例
-         */
-        window.onerror = function(msg, source, line, column, error){
-            console.log('window.error', msg, source, line, column, error)
-        }
-    }
-}
-</script>
-```
-
-不过如果错误被`try...catch`捕获后，错误信息不会向上抛出，不会别`window.onerror`监听
-
-2. 使用`window.addEventListener`进行全局错误事件监听，`event`对象中包含了所有错误信息
-
-```html
-<script>
-export default {
-    mounted(){
-        /**
-         * msg 错误信息
-         * source 报错的文件
-         * line 哪一行报错
-         * column 哪一列报错
-         * error 错误的对象实例
-         */
-        window.addEventListener('error', event => {
-            console.log('window error',event)
-        })
-    }
-}
-</script>
-```
-
-3. vue中的自己错误监听
-
- `errorCaptured`监听所有下级组件的错误，返回`false`会阻止事件向上传播
-
- 
 
 

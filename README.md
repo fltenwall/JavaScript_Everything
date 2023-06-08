@@ -159,7 +159,7 @@ Symbol
 
 #### 前端框架中的算法
 
-#### 前端架构
+### 前端架构
 
 BFF 中间层
 
@@ -174,6 +174,8 @@ BFF 中间层
 underscore.js
 
 ### 设计模式
+
+[前端中常见设计模式及应用场景](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/设计模式/常见设计模式及应用场景.md)
 
 观察者模式
 
@@ -287,6 +289,8 @@ Docker
 [pinia状态管理的使用](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/Pinia/pinia的基本使用.md)
 
 [vue优化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/优化/vue优化.md)
+
+[vue错误监听](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/vue错误监听.md)
 
 [vue在工作中遇到的问题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/vue在工作中遇到的问题.md)
 
