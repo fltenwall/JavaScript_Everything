@@ -97,7 +97,23 @@ webpack性能优化
 
 HTTP劫持
 
+### Vue
 
+[Vue3中的 Compostion API](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/setup.md)
+
+[vue-router的使用](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/vue-router/基本使用.md)
+
+[vuex状态管理的使用](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/vuex/vuex的基本使用.md)
+
+[pinia状态管理的使用](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/Pinia/pinia的基本使用.md)
+
+[vue优化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/优化/vue优化.md)
+
+[vue错误监听](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/vue错误监听.md)
+
+[vue在工作中遇到的问题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/vue在工作中遇到的问题.md)
+
+### React
 
 ### Node.js
 
@@ -297,27 +313,6 @@ navicat使用
 ### 运维与自动集成
 
 Docker
-
-### Vue
-
-[Vue3中的 Compostion API](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/setup.md)
-
-[vue-router的使用](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/vue-router/基本使用.md)
-
-[vuex状态管理的使用](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/vuex/vuex的基本使用.md)
-
-[pinia状态管理的使用](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/Pinia/pinia的基本使用.md)
-
-[vue优化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/优化/vue优化.md)
-
-[vue错误监听](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/vue错误监听.md)
-
-[vue在工作中遇到的问题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/vue在工作中遇到的问题.md)
-
-### React
-
-
-
 
 ### 编译原理
 
