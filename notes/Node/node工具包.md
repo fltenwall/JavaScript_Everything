@@ -13,3 +13,5 @@
 `redis`nodejs调用redis服务
 
 `socket.io`socket服务
+
+`asyncpool`并发控制

@@ -55,7 +55,7 @@ JS 模块化
 
 [HTTP请求方式的区别](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络请求/HTTP请求方式的区别.md)
 
-[实现ajax的并行与串行](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络请求/实现ajax的并行与串行.md)
+[实现ajax的并发请求控制](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络请求/实现ajax的并发请求控制.md)
 
 ### 浏览器渲染机制
 
@@ -79,11 +79,6 @@ HTTP劫持
 
 [架构优化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Node/02.架构优化.md)
 
-[登录校验方案 cookie+session/JWT/SSO](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Node/登录校验方案.md)
-
-
-
-
 Express使用
 
 Express 源码实现
@@ -100,11 +95,12 @@ Nust
 
 ### Node.js常见功能开发
 
+[登录校验方案 cookie+session/JWT/SSO](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Node/登录校验方案.md)
+
 鉴权
 
 权限设计
 
-### SSR
 
 ### 网络
 
@@ -115,6 +111,8 @@ Nust
 [三次握手🤝与四次挥手👋🏻]()
 
 socket
+
+### SSR/同构
 
 ### 手写实现
 
@@ -141,8 +139,6 @@ compone
 Promise
 
 Symbol
-
-
 
 ### 数据结构与算法
 

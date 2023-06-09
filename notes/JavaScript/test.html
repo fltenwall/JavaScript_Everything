@@ -30,6 +30,7 @@
             elements = Array.from(elements);
             elements.forEach(item => {
                 let itemValue = item.getAttribute(name);
+                // 类名可以有多个
                 if(name === 'class'){
                     new RegExp("\\b"+value+"\\b").test(itemValue) ? arr.push(item) : null;
                     return
