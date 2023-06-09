@@ -59,7 +59,9 @@ JS 模块化
 
 ### 浏览器渲染机制
 
-[浏览器相关](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/浏览器相关.md)
+[浏览器相关](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/浏览器/浏览器相关.md)
+
+[从输入url到页面渲染完成的过程](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/浏览器/从输入url到页面渲染完成的过程.md)
 
 ### 浏览器
 
