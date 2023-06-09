@@ -69,6 +69,26 @@ JS 模块化
 
 [web存储 cook/seesion/webstorage](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/web存储.md)
 
+### 性能优化
+
+[首屏优化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/性能优化/01.HTML首屏优化.md)
+
+[前端性能指标及评测](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/性能优化/前端性能指标.md)
+
+[vue优化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/优化/vue优化.md)
+
+[性能优化经典问题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/性能优化/性能问题面试题.md)
+
+[HTML标签的性能优化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/性能优化/HTML标签的性能优化.md)
+
+[CSS的性能优化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/性能优化/CSS的性能优化.md)
+
+[重绘和重排](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/性能优化/重绘和重排.md)
+
+前端监控
+
+webpack性能优化
+
 ### Web 安全
 
 [常见攻击手段及规避 XSS/CSRF/点击劫持/DDOS/SQL注入](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/web安全/常见攻击手段及规避.md)
@@ -235,26 +255,6 @@ Rollup
 
 ### Flutter
 
-
-### 性能优化
-
-[首屏优化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/性能优化/01.HTML首屏优化.md)
-
-[前端性能指标及评测](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/性能优化/前端性能指标.md)
-
-[vue优化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/优化/vue优化.md)
-
-[性能优化经典问题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/性能优化/性能问题面试题.md)
-
-[HTML标签的性能优化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/性能优化/HTML标签的性能优化.md)
-
-[CSS的性能优化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/性能优化/CSS的性能优化.md)
-
-[重绘和重排](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/性能优化/重绘和重排.md)
-
-前端监控
-
-webpack性能优化
 
 ### 脚手架实现
 
