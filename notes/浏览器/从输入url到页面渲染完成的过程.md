@@ -30,3 +30,4 @@ JS 使用`<script defer>`
 3. 异步 CSS、图片加载会触发重新渲染
 
 ![浏览器解析过程](https://github.com/fltenwall/JavaScript_Interview_Everything/tree/main/notes/%E6%B5%8F%E8%A7%88%E5%99%A8/imgs)
+

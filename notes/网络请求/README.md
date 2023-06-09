@@ -53,13 +53,21 @@ JS 模块化
 
 [网络请求 ajax/axios/fetch](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络请求/网络请求.md)
 
-[HTTP请求方式的区别](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络请求/HTTP请求方式的区别.md)
-
 [实现ajax的并发请求控制](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络请求/实现ajax的并发请求控制.md)
 
 [网页多标签tab通讯 ws/localstorage/sharedworker](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络请求/网页多标签tab通讯.md)
 
 [网页和iframe之间的通讯 window.postMessage](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络请求/网页和iframe之间的通讯.md)
+
+[http 缓存/状态码](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络请求/http.md)
+
+[HTTP请求方式的区别](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络请求/HTTP请求方式的区别.md)
+
+[网络协议常见问题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络请求/网络协议常见问题.md)
+
+[三次握手🤝与四次挥手👋🏻](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络请求/三次握手与四次挥手.md)
+
+socket
 
 ### 浏览器渲染机制
 
@@ -143,16 +151,6 @@ Nust
 
 权限设计
 
-
-### 网络
-
-[http](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/http.md)
-
-[网络协议常见问题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络协议常见问题.md)
-
-[三次握手🤝与四次挥手👋🏻]()
-
-socket
 
 ### SSR/同构
 

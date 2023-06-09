@@ -1,5 +1,5 @@
 
-1. 使用websocket
+#### 1. 使用websocket
 
 网页发信息给服务端，服务端同步信息到其他网页
 
@@ -7,7 +7,7 @@
 
 缺陷：需要服务端支持，成本高
 
-2. 通过localstorage通讯
+#### 2. 通过localstorage通讯
 
 可以实现`同域`多个页面的通讯，因为`localstorage`跨域不共享
 
@@ -40,7 +40,7 @@ pageB:
 </script>
 ```
 
-3. 通过`SharedWorker`通讯
+#### 3. 通过`SharedWorker`通讯
 
 `SharedWorker`是`WebWorker` 的一种
 
