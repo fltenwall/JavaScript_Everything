@@ -57,6 +57,8 @@ JS 模块化
 
 [实现ajax的并发请求控制](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络请求/实现ajax的并发请求控制.md)
 
+[网页多标签tab通讯 ws/localstorage/sharedworker](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络请求/网页多标签tab通讯.md)
+
 ### 浏览器渲染机制
 
 [浏览器相关](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/浏览器/浏览器相关.md)
@@ -242,7 +244,17 @@ Rollup
 
 [vue优化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/优化/vue优化.md)
 
-[性能优化经典问题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/性能优化/性能问题面试题.md)
+[性能优化经典问题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/性能优化/性能问题面试题.md)
+
+[HTML标签的性能优化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/性能优化/HTML标签的性能优化.md)
+
+[CSS的性能优化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/性能优化/CSS的性能优化.md)
+
+[重绘和重排](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/性能优化/重绘和重排.md)
+
+前端监控
+
+webpack性能优化
 
 ### 脚手架实现
 

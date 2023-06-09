@@ -28,3 +28,5 @@ JS 使用`<script defer>`
 1. 计算各个 DOM的尺寸，定位，最后绘制到页面
 2. 遇到 JS 可能会执行，使用`<script defer>`会在 HTML 解析后再执行
 3. 异步 CSS、图片加载会触发重新渲染
+
+![浏览器解析过程](https://github.com/fltenwall/JavaScript_Interview_Everything/tree/main/notes/%E6%B5%8F%E8%A7%88%E5%99%A8/imgs)
