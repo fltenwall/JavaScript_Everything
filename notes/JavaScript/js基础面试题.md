@@ -43,3 +43,13 @@
     </script>
 </body>
 ```
+
+#### script标签的defer和async有什么区别
+
+`<script>`: 遇到script中断 HTML 解析，加载js文件，然后解析 JS 文件，再继续解析 HTML
+
+`<script defer>`: 遇到script并行加载js文件，但 HTML 解析完才行执行 JS
+
+`<script async>`：遇到script并行加载js文件，但 JS 加载完后会立刻执行，HTML 需要等待 JS 加载结束再继续解析
+
+!(defer与async.png)[]
