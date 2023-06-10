@@ -12,7 +12,6 @@ function compose(...fns){
     return fns.reduce((result, fn) => (...args) => result(fn(...args)))
 }
 
-
 let newFn = compose(double,add)
 console.log(newFn(10)) // 21
 
