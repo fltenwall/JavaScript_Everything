@@ -45,7 +45,13 @@
 
 JS 模块化
 
-函数式编程
+### 函数式编程
+
+[函数式编程核心](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/函数式编程/函数式编程.md)
+
+[函数柯里化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/函数式编程/函数柯里化.md)
+
+[Compone函数组合](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/函数式编程/函数组合.md)
 
 ### 前后端通信
 
@@ -164,17 +170,13 @@ Nust
 
 [事件总线](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/手写实现/事件总线.md)
 
-apply
-
-call
-
-bind
+[apply/call/bind](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/手写实现/call-apply-bind.md)
 
 new
 
-函数柯里化
+[函数柯里化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/函数式编程/函数柯里化.md)
 
-compone
+[compone](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/函数式编程/函数组合.md)
 
 Promise
 
