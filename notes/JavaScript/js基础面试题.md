@@ -97,3 +97,139 @@ preconnet：DNS 预连接
     <link rel="preconnet" href="https://www.baid.com" crossorigin>
 </head>
 ```
+
+#### 什么时候不能使用箭头函数
+
+箭头函数的特性：
+
+1.箭头函数不绑定this，直接去上一层作用域取this，无法通过`call/apply/bind`改变this
+
+2.箭头函数没有显示原型对象，即没有`prototype`属性
+
+3.箭头函数不能作为构造函数使用
+
+4.箭头函数没有`arguments`
+
+5.箭头函数作为对象存在隐式原型，通过`__proto__`指向`Function`的原型对象，即`Function.prototype`
+
+```javascript
+const a = ()=>{}
+console.log(a.__proto__ === Function.prototype) // true
+```
+
+不适用的场景：
+
+1. 作为对象方法，这样无法通过this获取到该对象
+2. 作为原型方法，函数内部的this无法指向原型
+3. 箭头函数无法作为构造函数使用
+4. 动态上下文中的回调函数
+
+```javascript
+btn.addEventListener('click', ()=>{
+    this.innerHTML = 'aaa'  // ❌
+})
+```
+5. Vue 的生命周期和methods 不能使用箭头函数，`this`无法指向 Vue实例。
+
+因为 Vue 组件本质上是一个对象，而 React 的非hooks组件本质上是一个class因此可以使用
+
+#### for...in 和 for...of 的区别
+
+1. for...in 遍历得到key，for...of遍历得到value
+2. 适用于不同的数据类型，`for...in`适用于`可枚举`数据，比如对象、数组、字符串等；`for...of`适用于`可迭代`数据， 比如数组、字符串、Map、Set
+
+遍历对象：`for...in`可以；`for...of`不行，会报错。
+
+遍历map/set：`for...in`不可以，不会返回任何结果；`for...of`可以，迭代`map`得到的是`[key,value]`组合
+
+遍历generator：`for...in`不可以，不会返回任何结果；`for...of`可以
+
+#### 如何区分`可枚举`与`可迭代`数据：
+
+使用`Object.getOwnPropertyDescriptors(obj)`查看`enumerable`属性是否为`true`
+
+查看数据是否存在`Symbol.iterator`迭代方法，该迭代函数具有一个`next`方法
+
+### for await...of有什么作用
+
+`for await...of`用于遍历多个 Promise，可以替代使用`Promise.all()`
+
+```javascript
+
+function createPromise(val){
+    return new Promise((resolve, reject)=>{
+        setTimeout(function(){
+            resolve(val)
+        },1000)
+    })
+}
+
+(async function(){
+    const p1 = createPromise(1)
+    const p2 = createPromise(2)
+    const p3 = createPromise(3)
+
+    const list = [p1,p2,p3]
+
+    // 遍历多个promise
+    for await (const res of list) {
+        console.log(res)
+    }
+})()
+
+```
+
+如果是想异步调用每一个promise，让promise按顺序执行：
+
+```javascript
+(async function(){
+    const list = [1,2,3]
+
+    for (const num of list) {
+        const res = await createPromise(num)
+        console.log(res)
+    }
+})()
+```
+
+#### JS严格模式的特点
+
+构建工具打包出来的生产环境的代码一般是在严格模式下
+
+```javascript
+// 全局开启
+'use strick'
+
+// 只在该该函数内开启
+function fn(){
+    'use strick'
+}
+```
+
+```html
+<script>
+'use strick'
+</script>
+```
+
+要求：
+
+1. 全局变量必须先声明
+2. 禁止使用`with`
+```javascript
+const obj = {a:1, b:2};
+with(obj){
+    console.log(a, b)
+}
+```
+3. 创建`eval`作用域
+```javascript
+'use strick'
+var x = 1;
+eval(`var x = 2;console.log(x)`) // 2
+console.log(x)  // 1
+```
+4. 禁止`this`指向`window`，默认指向window的则`this`为`undefined`
+5. 函数参数不能重名
+
+   
