@@ -1,4 +1,4 @@
-# JavaScript_Interview_Everything
+# JavaScript_Everything
 
 ### javascript核心
 
