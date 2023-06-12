@@ -172,7 +172,7 @@ Nust
 
 [事件总线](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/手写实现/事件总线.md)
 
-[apply/call/bind](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/手写实现/call-apply-bind.md)
+[apply/call/bind](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/%E6%89%8B%E5%86%99%E5%AE%9E%E7%8E%B0/call-apply-bind.md)
 
 new
 
