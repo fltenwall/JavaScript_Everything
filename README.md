@@ -253,9 +253,11 @@ underscore.js
 
 ### 包管理
 
-npx
+npm
 
-npnm
+yarn
+
+npmp
 ### 打包工具
 
 #### webpack
@@ -264,7 +266,11 @@ npnm
 
 [webpack打包速度优化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/前端工程化/打包工具/Webpack/webpack打包速度优化.md)
 
+[自定义loader](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/前端工程化/打包工具/Webpack/自定义loader.md)
 
+[自定义plugin](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/前端工程化/打包工具/Webpack/自定义plugin.md)
+
+[tapable](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/前端工程化/打包工具/Webpack/tapable.md)
 
 Gulp
 
@@ -308,6 +314,9 @@ Rollup
 [CSS面试题列表](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/CSS/CSS面试题列表.md)
 ### Typescript
 
+[泛型编程及使用]()
+
+[映射类型]()
 
 
 ### 数据库
