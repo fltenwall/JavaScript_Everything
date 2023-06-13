@@ -314,9 +314,9 @@ Rollup
 [CSS面试题列表](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/CSS/CSS面试题列表.md)
 ### Typescript
 
-[泛型编程及使用]()
+[泛型编程及使用](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/Typescript/泛型编程及使用.md)
 
-[映射类型]()
+[映射类型](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/Typescript/映射类型.md)
 
 
 ### 数据库
