@@ -131,6 +131,8 @@ HTTP劫持
 
 [vue在工作中遇到的问题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/vue在工作中遇到的问题.md)
 
+[vue2常见问题合集](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/vue2常见问题合集.md)
+
 ### React
 
 ### Node.js
@@ -302,6 +304,8 @@ Rollup
 ### 前端 AI 辅助
 
 ### HTML5
+
+[HTML基本问题](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/HTML/HTML基本问题.md)
 
 ### CSS
 
