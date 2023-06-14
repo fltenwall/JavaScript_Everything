@@ -318,6 +318,10 @@ Rollup
 
 [映射类型](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/Typescript/映射类型.md)
 
+[条件类型及分发](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/Typescript/条件类型.md)
+
+[内置工具及手写实现](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/Typescript/内置工具.md)
+
 
 ### 数据库
 
