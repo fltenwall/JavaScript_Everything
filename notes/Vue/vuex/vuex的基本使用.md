@@ -227,7 +227,7 @@ const store = createStore({
 
 ### getters进行映射
 
-#### options中使用getters进行映射
+#### options中使用mapGetters进行映射
 
 ```html
 <template>
@@ -382,7 +382,7 @@ const { increment} = newMutations
 
 #### actions和mutations的区别
 
-1. 如何有异步操作需要在vuex中执行，应该讲异步操作放入`actions`;mutations中只能放入同步操作
+1. 如果有异步操作需要在vuex中执行，应该讲异步操作放入`actions`;mutations中只能放入同步操作
 
  2. `actions`需要通过`commit`提交`mutation`，进而改变状态；mutaions中可以直接修改状态；
   

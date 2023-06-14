@@ -232,4 +232,13 @@ console.log(x)  // 1
 4. 禁止`this`指向`window`，默认指向window的则`this`为`undefined`
 5. 函数参数不能重名
 
-   
+#### for和forEach 哪个更快
+
+for更快，因为 forEach每次都要创建一个函数调用，函数需要创建作用域等开销。
+
+#### 如何将一个类数组转为数组
+
+1. 使用`Array.from()`
+2. 使用扩展运算符`[...list]`
+3. 使用`Array.prototype.slice.call(list)`
+4. 使用for循环将类数组元素逐个放入一个新数组
