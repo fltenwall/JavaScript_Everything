@@ -2,7 +2,7 @@
 
 DOM 中的所有节点都是Node，而Node是Element的基类，Element 是其他HTML 元素的基类
 
-![node]()
+![node](https://github.com/fltenwall/JavaScript_Everything/blob/main/imgs/HTML/node.png)
 
 #### HTMLCollection 和 NodeList 有什么区别
 
