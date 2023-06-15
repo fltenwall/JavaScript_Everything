@@ -133,6 +133,8 @@ HTTP劫持
 
 [vue2常见问题合集](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/vue2常见问题合集.md)
 
+[vueRouter常见问题合集](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Vue/vueRouter常见问题合集.md)
+
 ### React
 
 ### Node.js
@@ -176,9 +178,15 @@ Nust
 
 [事件总线](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/手写实现/事件总线.md)
 
+[实现ajax的并发请求控制](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络请求/实现ajax的并发请求控制.md)
+
 [apply/call/bind](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/手写实现/call-apply-bind.md)
 
-new
+[实现new](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/手写实现/new.md)
+
+[实现instanceof](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/手写实现/instanceof.md)
+
+[扩展运算符的实现](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/手写实现/扩展运算符的实现.md)
 
 [函数柯里化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/函数式编程/函数柯里化.md)
 
@@ -187,6 +195,14 @@ new
 Promise
 
 Symbol
+
+用 ES5 实现继承
+
+实现 Promise.all方法
+
+实现一个sleep函数
+
+
 
 ### 数据结构与算法
 
@@ -312,6 +328,14 @@ Rollup
 [水平垂直居中布局](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/CSS/水平垂直居中布局.md)
 
 [圣杯布局和双飞翼布局](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/CSS/圣杯布局和双飞翼布局.md)
+
+[左边定宽，右边自适应](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/CSS/左边定宽，右边自适应.md)
+
+[绝对居中](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/CSS/绝对居中.md)
+
+[CSS画一个三角形](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/CSS/CSS画一个三角形.md)
+
+[CSS性能优化](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/CSS/CSS性能优化.md)
 
 [CSS常见面试题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/CSS/CSS面试题.md)
 

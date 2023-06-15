@@ -2,47 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        html,body{
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
+        .triangle{
+            width: 10px;
+            /* border: 10px solid lightgrey; */
+            border-left: 10px solid lightblue;
+            border-right: 10px solid lightcoral;
+            border-top: 10px solid lightgoldenrodyellow;
+            border-bottom: 10px solid lightseagreen;
         }
-        .container{
-            height: 100%;
-            position: relative;
-        }
-        .center{
-           margin: 0 200px;
-           min-height: 300px;
-           background-color: antiquewhite;
-        }
-        .left,
-        .right{
-            position: absolute;
-            top:0;
-            width: 200px;
-            height: 200px;
-            background-color: aquamarine;
-        }
-        .left{
-            left: 0;
-        }
-        .right{
-            right: 0;
-        }
-        
-
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="left"></div>
-        <div class="center"></div>
-        <div class="right"></div>
-    </div>
+    <div class="triangle"></div>
 </body>
 </html>
