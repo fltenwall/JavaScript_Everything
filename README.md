@@ -335,8 +335,6 @@ Rollup
 
 [CSS画一个三角形](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/CSS/CSS画一个三角形.md)
 
-[CSS性能优化](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/CSS/CSS性能优化.md)
-
 [CSS常见面试题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/CSS/CSS面试题.md)
 
 [CSS面试题列表](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/CSS/CSS面试题列表.md)
