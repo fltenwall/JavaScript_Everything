@@ -15,6 +15,7 @@
 * 14. [offsetHeight-scrollHeight-clientHeight有什么区别](#offsetHeight-scrollHeight-clientHeight)
 * 15. [15. css中哪些属性是可以继承的 ？](#css)
 * 16. [16. 清除浮动有哪些方法, 各有什么优缺点？](#-1)
+* 17. [requestIdleCallback和requestAnimationFrame有什么区别](#requestIdleCallbackrequestAnimationFrame)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -321,3 +322,12 @@ scrollHeight = padding + 实际内容尺寸(子元素的大小)
 </body>
 </html>
 ```
+
+####  17. <a name='requestIdleCallbackrequestAnimationFrame'></a>requestIdleCallback和requestAnimationFrame有什么区别
+
+`requestIdleCallback` 可以用来`判断浏览器是否空闲`, 空闲时才执行，低优先级
+
+`requestAnimationFrame` 每次渲染完都会执行，高优先级
+
+requestIdleCallback和requestAnimationFrame 都是宏任务
+

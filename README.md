@@ -137,6 +137,9 @@ HTTP劫持
 
 ### React
 
+
+### svelte
+
 ### HTML5
 
 [HTML基本问题](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/HTML/HTML基本问题.md)
@@ -171,6 +174,8 @@ HTTP劫持
 [nodejs核心与架构设计](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Node/01.node核心概览.md)
 
 [架构优化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/Node/02.架构优化.md)
+
+[node面试题](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/Node/node面试题.md)
 
 Express使用
 

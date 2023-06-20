@@ -141,3 +141,79 @@ nextTick是为了在数据变化后，等待 Vue 完成Dom 更新，数据变化
 ```
 
 #### 组件通信
+
+1. prop和$emit
+2. 自定义事件
+3. $attrs
+4. $parent
+5. $refs
+6. provide/inject
+7. vuex
+
+根据适合场景划分：
+
+1. 父子通讯
+
+(1)子组件用`props`接收事件，用`emits`触发父组件改变数据的操作
+
+(2)使用`$attrs`接收子组件未在`props`中接收，但父组件传递了的剩下数据。
+
+(3)`mounted`中通过`this.$parent`可以直接获取父节点属性和方法；通过`this.$children`可以获取子节点属性和方法，而vue3中可以使用`this.$refs`获取子节点属性和方法
+
+2. 上下级组件(跨多级)通讯
+
+(1)自定义事件，即事件总线。
+
+Vue2 可以在独立文件中通过直接`new Vue()`直接生成事件总线
+
+Vue3 中需要引入第三方事件总线库`event-emitter`
+
+在 A 组件里引入事件总线，在`mounted`生命周期中通过`event.on`监听事件，在`beforeUnmounted`生命周期中通过`evnet.off`将事件解绑。为了进行函数解绑，因此传入回调函数时，应该使用具名函数，不能使用匿名函数。
+
+在 B 组件中引入事件总线，通过`event.emit`发出事件。
+
+这样 A 组件就能监听到 B 组件发出的事件并监听到。
+
+但是多监听多触发，容易混乱
+
+------------------
+
+(2)`$attrs` + `v-bind`
+
+存在三个组件A，B，C，它们之间的包含关系为，A > B > C, A传递了三个属性a,b,c和对应的三个方法`getA`,`getB`,`getC`给 B，但是B只在`props`和`emits`里接收了一个属性`a`和一个方法`getA`。这时 B 未接收的剩下属性和方法就存放在了`$attrs`中。
+
+注意：Vue2 中，子组件未传递到它的下一级组件的属性是放在`$attrs`中，方法是放在`$listeners`中。而 Vue3 里，移除了`$listeners`，将属性和方法全部放在了`$attrs`中。
+
+然后 B 给 C 传递了 A 的三个属性和三个方法，因为 B 并未接收 C 传递过来的属性`b`,`c`以及对应的方法`getB`和`getC`。此时可以通过`v-bind:$attrs`传递给 C 。
+
+注意：如果子组件中只有一个节点，那么父组件传递的信息会填充在该子组件的唯一 Dom 节点中。如果子组件不想被填充信息，那么可以通过`inheritAttrs:false`取消。如果子组件中的节点数多于 1，则没有此问题。
+
+
+(3) `provide`和`inject`
+
+祖先组件中提供`provide`，下面任意层级的组件中都可以通过`inject`取到
+
+```javascript
+provide(){
+  return {
+    info：computed(()=>this.age)
+  }
+}
+```
+
+3. 全局通讯
+
+vuex, pinio
+
+
+#### 谈谈对vue/react框架的理解
+
+核心价值：`数据和视图分离`，`数据驱动视图`。只关注业务数据，不再关注DOM 变化。
+
+整体思想：数据变化 => 生成新的vdom =>  dom diff => 更新dom 
+
+vdom的价值: 用js对象模拟 Dom 节点。使用vdom实现数据驱动视图。
+
+
+
+
