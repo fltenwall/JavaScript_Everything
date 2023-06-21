@@ -270,6 +270,8 @@ Symbol
 
 #### JavaScript版
 
+[排序算法](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/算法/排序算法.md)
+
 
 #### 前端框架中的算法
 

@@ -21,6 +21,7 @@
     * 1.19. [你对Promise了解多少](#Promise)
     * 1.20. [如何去除数组中指定的元素](#-1)
     * 1.21. [JavaScript 的数组方法有哪些](#JavaScript)
+    * 1.22. [数组排序的方式](#-1)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -322,9 +323,11 @@ const res = arr.reduce((prev, current, currentIndex, sourceArr)=>{
 console.log(res) //10
 ```
 
+-------------------------------
+
 对基本元素进行排序
 
-push 方法返回的是数组长度，会改变原数组
+1. push 方法返回的是数组长度，会改变原数组
 
 `indexOf + filter`
 
@@ -341,7 +344,7 @@ function unique(arr){
 console.log(unique(arr)) // [ 1, 2, 3, 4, 5 ]
 ```
 
-`sort`排序+遍历数组前后比较
+2. `sort`排序+遍历数组前后比较
 
 ```javascript
 const arr = [1,2,3,4,2,3,5,1]
@@ -361,7 +364,7 @@ function unique(arr){
 console.log(unique(arr)) // [ 1, 2, 3, 4, 5 ]
 ```
 
-`set`解构赋值
+3. `set`解构赋值
 
 ```javascript
 const arr = [1,2,3,4,2,3,5,1]
@@ -375,7 +378,7 @@ function unique(arr){
 console.log(unique(arr)) // [ 1, 2, 3, 4, 5 ]
 ```
 
-`set` + `Array.from`方法
+4. `set` + `Array.from`方法
 
 ```javascript
 const arr = [1,2,3,4,2,3,5,1]
@@ -389,9 +392,11 @@ function unique(arr){
 console.log(unique(arr)) // [ 1, 2, 3, 4, 5 ]
 ```
 
+-------------------------------
+
 对象数组去重
 
-临时对象缓存key值
+1. 临时对象缓存key值
 
 ```javascript
 const arr = [{name:'flten', age:18},{name:'wall',age:18},{name:'flten',age:22}]
@@ -414,7 +419,7 @@ function unique(arr, key){
 console.log(unique(arr, 'name')) // [ { name: 'flten', age: 18 }, { name: 'wall', age: 18 } ]
 ```
 
-使用 reduce 和临时对象缓存
+2. 使用 reduce 和临时对象缓存
 
 ```javascript
 const arr = [{name:'flten', age:18},{name:'wall',age:18},{name:'flten',age:22}]
@@ -520,6 +525,8 @@ if(a===1 && a===2 && a===3){
 }
 ```
 
+1. 使用数据劫持
+   
 ```javascript
 let value = 0
 Object.defineProperty(window, 'a', {
@@ -529,6 +536,34 @@ Object.defineProperty(window, 'a', {
 })
 
 if(a===1 && a===2 && a===3){
+    console.log('object')
+}
+```
+
+2. 利用数据转化
+
+对象转为字符串时，先执行`toString`，再转化为数字。但不是严格相等
+
+```javascript
+let a = {
+    num: 0,
+    toString(){
+        return ++this.num
+    }
+}
+
+if(a==1 && a==2 && a==3){
+    console.log('object')
+}
+```
+
+3. 使用数组
+
+```javascript
+let a = [1,2,3]
+a.toString = a.shift
+
+if(a==1 && a==2 && a==3){
     console.log('object')
 }
 ```
@@ -799,4 +834,62 @@ const res1 = arr1.reduce((prev,current)=>{
     return prev + current
 })
 console.log(res1) // 45
+```
+
+####  1.22. <a name='-1'></a>数组排序的方式
+
+```javascript
+const arr = [39,3,28,9,10,48,28,59,6]
+```
+
+1. 冒泡排序
+
+```javascript
+function sort(array){
+    for (let i = 0; i < array.length-1; i++) {
+        for(let j=0;j < array.length - i - 1;j++){
+            if(array[j] > array[j+1]){
+                [array[j],array[j+1]] = [array[j+1],array[j]]
+            }
+        }
+    }
+    return array
+}
+```
+
+2. 插入排序
+
+```javascript
+function sort(array){
+    const sortArr = []
+    sortArr.push(array[0])
+    for (let index = 1; index < array.length; index++) {
+        let element = array[index]
+        for (let j = sortArr.length-1; j >= 0; j--) {
+            let sortArrElement = sortArr[j]
+            if(element  > sortArrElement){
+                sortArr.splice(j+1, 0, element)
+                break
+            }
+            if(j === 0) sortArr.unshift(element)
+        }
+    }
+    return sortArr
+}
+```
+
+3. 快速排序(二分区间递归比较)
+   
+```javascript
+function sort(array){
+    if(array.length <= 1) return array
+    let mid = Math.floor(array.length / 2)
+    let left = [], right = []
+    let midValue = array.splice(mid, 1)[0]
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        element > midValue ? right.push(element) : left.push(element)
+    }
+    return sort(left).concat(midValue, sort(right))
+}
 ```
