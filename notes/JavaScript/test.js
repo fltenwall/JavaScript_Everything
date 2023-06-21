@@ -1,15 +1,26 @@
-const arr = [39,3,28,9,10,48,28,59,6]
-
-function sort(array){
-    if(array.length <= 1) return array
-    let mid = Math.floor(array.length / 2)
-    let left = [], right = []
-    let midValue = array.splice(mid, 1)[0]
-    for (let index = 0; index < array.length; index++) {
-        const element = array[index];
-        element > midValue ? right.push(element) : left.push(element)
+const fn = function(count, start, res){
+    const mid = Math.ceil(count / 2)
+    let index = start
+    let arrCount = 0
+    let tempArr = []
+    while(index <= mid && arrCount < count){
+        tempArr.push(index)
+        arrCount += index
+        if(arrCount === count){
+            res.push(tempArr)
+            break
+        }
+        ++index
     }
-    return sort(left).concat(midValue, sort(right))
+    if(start <= mid) return fn(count, start+1, res)
 }
 
-console.log(sort(arr))
+const func = function(count){
+    let res = []
+    fn(count, 1, res) 
+    return res
+}
+console.log(func(4))  // []
+console.log(func(5))  // [ [ 2, 3 ] ]
+console.log(func(10)) // [ [ 1, 2, 3, 4 ] ]
+console.log(func(15)) // [ [ 1, 2, 3, 4, 5 ], [ 4, 5, 6 ], [ 7, 8 ] ]

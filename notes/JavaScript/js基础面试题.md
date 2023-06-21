@@ -516,6 +516,14 @@ console.log(flatArr(arr))
 // [1, 2, 3, 6, 7, 10,9, 3, 5, 7, 0, 11,7]
 ```
 
+4. toString
+
+```javascript
+const newArr = arr.toString().split(',').map(item => {
+    return parseFloat(item)
+})
+```
+
 ####  1.16. <a name='a1a2a3'></a>如何使`a===1 && a===2 && a===3`成立
 
 使以下代码成立：
