@@ -1,26 +1,9 @@
-const fn = function(count, start, res){
-    const mid = Math.ceil(count / 2)
-    let index = start
-    let arrCount = 0
-    let tempArr = []
-    while(index <= mid && arrCount < count){
-        tempArr.push(index)
-        arrCount += index
-        if(arrCount === count){
-            res.push(tempArr)
-            break
-        }
-        ++index
+const fibonacci = function(count){
+    const dp = [1,1]
+    for (let index = 2; index < count; index++) {
+        dp[index] = dp[index-2] + dp[index-1]
     }
-    if(start <= mid) return fn(count, start+1, res)
+    return dp[count-1]
 }
 
-const func = function(count){
-    let res = []
-    fn(count, 1, res) 
-    return res
-}
-console.log(func(4))  // []
-console.log(func(5))  // [ [ 2, 3 ] ]
-console.log(func(10)) // [ [ 1, 2, 3, 4 ] ]
-console.log(func(15)) // [ [ 1, 2, 3, 4, 5 ], [ 4, 5, 6 ], [ 7, 8 ] ]
+console.log(fibonacci(10))

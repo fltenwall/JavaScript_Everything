@@ -274,6 +274,12 @@ Symbol
 
 [递归算法题](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/算法/递归算法题.md)
 
+[动态规划](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/算法/动态规划.md)
+
+贪心算法
+
+分治/回溯
+
 
 #### 前端框架中的算法
 
