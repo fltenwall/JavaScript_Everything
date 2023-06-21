@@ -1,9 +1,12 @@
-const fibonacci = function(count){
-    const dp = [1,1]
-    for (let index = 2; index < count; index++) {
-        dp[index] = dp[index-2] + dp[index-1]
+const maxSubArray = function(prices){
+    const len = prices.length
+    let preValue = prices[0]
+    let max = preValue
+    for (let index = 1; index < len; index++) {
+        preValue = Math.max(prices[index], prices[index]+preValue)
+        max = Math.max(max, preValue)
     }
-    return dp[count-1]
+    return max
 }
 
-console.log(fibonacci(10))
+console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
