@@ -2,44 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        html,body{
-            height:100%;
-        }
-    </style>
+    <script src="./test.js"></script>
 </head>
 <body>
-    <div class="box fix"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box fix"></div>
-    <div class="box"></div>
-    <div class="box2"></div>
-    <div class="box3"></div>
-    <div class="box4"></div>
-    <div class="box5"></div>
+    <button id="btn">获取数据</button>
     <script>
-        function $attr(name, value){
-            // 获取页面中所有标签
-            let elements = document.getElementsByTagName('*');
-            const arr = [];
-            elements = Array.from(elements);
-            elements.forEach(item => {
-                let itemValue = item.getAttribute(name);
-                // 类名可以有多个
-                if(name === 'class'){
-                    new RegExp("\\b"+value+"\\b").test(itemValue) ? arr.push(item) : null;
-                    return
-                }
-                if(itemValue === value) arr.push(item)
-            });
-            return arr 
-        }
-        console.log($attr('class', 'box'))
+        let p = new Promise((resolve, reject)=>{
+            setTimeout(function(){
+                resolve('ok')
+            },100)
+        })
+        const res = p.then(res=>{
+            // return 'p'
+            return new Promise((resolve, reject)=>{
+                reject('no')
+            })
+        },err=>{
+            console.log(err)
+        })
+        
+        console.log(res)
     </script>
 </body>
 </html>

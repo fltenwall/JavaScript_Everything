@@ -22,6 +22,7 @@
     * 1.20. [如何去除数组中指定的元素](#-1)
     * 1.21. [JavaScript 的数组方法有哪些](#JavaScript)
     * 1.22. [数组排序的方式](#-1)
+    * 1.23. [对象调用push面试题](#push)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -900,4 +901,40 @@ function sort(array){
     }
     return sort(left).concat(midValue, sort(right))
 }
+```
+
+####  1.23. <a name='push'></a>对象调用push面试题
+
+重点：
+
+1. `Array.prototype.push`会将元素追加到最后面
+2. `Array.prototype.push`会将`length`属性加 1 
+
+```javascript
+const obj = {
+    2:3,
+    3:4,
+    length:2,
+    push:Array.prototype.push
+}
+obj.push(1)
+obj.push(2)
+console.log(obj) // { '2': 1, '3': 2, length: 4, push: [Function: push] }
+```
+
+解析：
+
+1. `obj.push(1)`相当于`obj[obj.length]=1`，相当于`obj[2]=1`，同时`obj.length`会加 1，此时`obj.length`为 3
+2. `obj.push(2)`相当于`obj[obj.length]=2`，相当于`obj[3]=2`，同时`obj.length`会加 1，此时`obj.length`为 4
+
+```javascript
+const obj = {
+    2:3,
+    3:4,
+    length:4,
+    push:Array.prototype.push
+}
+obj.push(1)
+obj.push(2)
+console.log(obj) // { '2': 3, '3': 4, '4': 1, '5': 2, length: 6, push: [Function: push] }
 ```

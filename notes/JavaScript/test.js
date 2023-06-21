@@ -1,12 +1,58 @@
-const maxSubArray = function(prices){
-    const len = prices.length
-    let preValue = prices[0]
-    let max = preValue
-    for (let index = 1; index < len; index++) {
-        preValue = Math.max(prices[index], prices[index]+preValue)
-        max = Math.max(max, preValue)
+class Promise {
+    constructor(executor){
+        this.PromiseState = 'pendding'
+        this.PromiseResult = null
+        this.callbacks = []
+        const self = this
+        function resolve(data){
+            if(self.PromiseState !== 'pendding') return
+            self.PromiseState = 'fulfilled'
+            self.PromiseResult = data
+            if(self.callbacks.length > 0){
+                self.callbacks.forEach(callback => {
+                    callback.onResolve(data)
+                })
+            }
+        }
+        function reject(err){
+            if(self.PromiseState !== 'pendding') return
+            self.PromiseState = 'rejected'
+            self.PromiseResult = err
+            if(self.callbacks.length > 0){
+                self.callbacks.forEach(callback => {
+                    callback.onResolve(data)
+                })
+            }
+        }
+        try {
+            executor(resolve,reject)
+        } catch (error) {
+            reject(error)
+        }
     }
-    return max
+    then(onResolve, onReject){
+        return new Promise((resolve, reject) => {
+            if(this.PromiseState === 'fulfilled'){
+                try {
+                    let res = onResolve(this.PromiseResult)
+                    if(res instanceof Promise) {
+                        return res.then(val => {
+                            resolve(val)
+                        }, err => {
+                            reject(err)
+                        })
+                    }else {
+                        resolve(res)
+                    }
+                } catch (error) {
+                    resolve(res)
+                }
+            }
+            if(this.PromiseState === 'rejected') onReject(this.PromiseResult)
+            if(this.PromiseState === 'pendding') {
+                // 保存回调函数
+                this.callbacks.push({onResolve,onReject})
+            }
+        })
+    }
 }
-
-console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))

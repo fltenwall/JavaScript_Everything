@@ -1,6 +1,9 @@
-// const arr1 = [{age:22},{age:22},{age:19}]
-const arr1 = [1,2,3,34,5]
-const res1 = arr1.reduce((prev,current)=>{
-    return prev + current
-})
-console.log(res1) // 45
+const obj = {
+    2:3,
+    3:4,
+    length:4,
+    push:Array.prototype.push
+}
+obj.push(1)
+obj.push(2)
+console.log(obj) // { '2': 1, '3': 2, length: 4, push: [Function: push] }

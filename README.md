@@ -6,7 +6,9 @@
 
 [async异步请求](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/async异步请求.md)
 
-手写Promise
+[Promise实例](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/JavaScript/Promise实例.md)
+
+[手写Promise](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/JavaScript/手写Promise.md)
 
 [宏任务微任务与事件循环](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/宏任务微任务与事件循环.md)
 
@@ -72,6 +74,8 @@ JS 模块化
 [网络协议常见问题](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络请求/网络协议常见问题.md)
 
 [三次握手🤝与四次挥手👋🏻](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络请求/三次握手与四次挥手.md)
+
+[抓包](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/网络请求/抓包.md)
 
 socket
 
@@ -225,6 +229,14 @@ Nust
 [函数柯里化](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/函数式编程/函数柯里化.md)
 
 [compone](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/函数式编程/函数组合.md)
+
+[实现多个对象的合并](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/手写实现/其他js函数实现/对象合并.md)
+
+[求两个数组的交集](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/手写实现/其他js函数实现/求两个数组的交集.md)
+
+[求两个数组的差集](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/手写实现/其他js函数实现/求两个数组的差集.md)
+
+[将对象变为数组](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/手写实现/其他js函数实现/将对象变为数组.md)
 
 Promise
 
