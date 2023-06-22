@@ -1,63 +1,13 @@
-Function.prototype.before = function before(callback){
-    if(typeof callback !== 'function') throw new TypeError('callback must be a function')
-    const self = this
-    // 实现链式调用：返回一个函数
-    return function proxy(...args){
-        callback.call(this, ...args) // after中的回调先执行
-        return self.call(this, ...args) // call函数执行，并返回func返回值
-    }
+function rotateArray(arr, k){
+    const len = arr.length
+    if(k < 0 || k === 0 || k === len) return arr
+    new Array(k).fill('').forEach(() => arr.unshift(arr.pop()))
+    return arr
 }
 
-Function.prototype.after = function after(callback){
-    if(typeof callback !== 'function') throw new TypeError('callback must be a function')
-    const self = this
-    // 实现链式调用：返回一个函数
-    return function proxy(...args){
-        let res = self.call(this, ...args) // 前一个proxy先执行(before和func)
-        callback.call(this, ...args) // after再执行
-        return res // 返回func返回值
-    }
-};
+const arr = [1,2,3,4,5,6,7]
 
-const funcHasResult = () => {
-    console.log('func')
-    return 111
-};
-
-// func.before(()=>{console.log('before')}).after(()=>{
-//     console.log('after')
-// })();
-
-// let a = func.before(()=>{console.log('before')})
-/*
-function proxy(...args){
-        callback.call(this, ...args)
-        return self.call(this, ...args)
-    }
-*/
-let a = funcHasResult.before(()=>{
-    console.log('before')
-}).after(()=>{
-    console.log('after')
-})()
-
-console.log(a)
-
-/*
-before
-func
-after
-111
-*/
-
-// func.before(()=>{console.log('before')}).after(()=>{
-//     console.log('after')
-// })()
-
-/*
-function proxy(...args){
-        let res = self.call(this, ...args)
-        callback.call(this, ...args)
-        return res
-    }
-*/
+console.log(rotateArray(arr,-1))
+console.log(rotateArray(arr,0))
+console.log(rotateArray(arr,7))
+console.log(rotateArray(arr,3)) // [5, 6, 7, 1,2, 3, 4]
