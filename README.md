@@ -45,6 +45,8 @@
 
 [V8内存管理机制](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/V8垃圾回收机制.md)
 
+[数据类型检测](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/JavaScript/数据类型检测.md)
+
 JS 模块化
 
 ### 函数式编程
