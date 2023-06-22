@@ -47,6 +47,8 @@
 
 [数据类型检测](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/JavaScript/数据类型检测.md)
 
+[AOP面向切面编程](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/JavaScript/AOP面向切面编程.md)
+
 JS 模块化
 
 ### 函数式编程

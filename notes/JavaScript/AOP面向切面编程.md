@@ -1,3 +1,4 @@
+```javascript
 Function.prototype.before = function before(callback){
     if(typeof callback !== 'function') throw new TypeError('callback must be a function')
     const self = this
@@ -19,22 +20,25 @@ Function.prototype.after = function after(callback){
     }
 };
 
+const func = () => console.log('func');
+
+func.before(()=>{console.log('before')}).after(()=>{
+    console.log('after')
+})();
+
+/*
+before
+func
+after
+*/
+
+
+// 函数有返回值
 const funcHasResult = () => {
     console.log('func')
     return 111
 };
 
-// func.before(()=>{console.log('before')}).after(()=>{
-//     console.log('after')
-// })();
-
-// let a = func.before(()=>{console.log('before')})
-/*
-function proxy(...args){
-        callback.call(this, ...args)
-        return self.call(this, ...args)
-    }
-*/
 let a = funcHasResult.before(()=>{
     console.log('before')
 }).after(()=>{
@@ -49,15 +53,4 @@ func
 after
 111
 */
-
-// func.before(()=>{console.log('before')}).after(()=>{
-//     console.log('after')
-// })()
-
-/*
-function proxy(...args){
-        let res = self.call(this, ...args)
-        callback.call(this, ...args)
-        return res
-    }
-*/
+```
