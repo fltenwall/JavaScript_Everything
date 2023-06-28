@@ -242,11 +242,14 @@ Nust
 
 [将对象变为数组](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/手写实现/其他js函数实现/将对象变为数组.md)
 
-Promise
+[params参数解析](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/手写实现/其他js函数实现/params参数解析.md)
+
+[手写Promise](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/JavaScript/手写Promise.md)
 
 Symbol
 
-用 ES5 实现继承
+[用 ES5 实现继承]((https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/JavaScript/面向对象.md))
+
 
 实现 Promise.all方法
 
@@ -426,6 +429,10 @@ Docker
 ### C 语言
 
 ### Rust
+
+### Python
+
+[Python基础](https://github.com/fltenwall/JavaScript_Everything/blob/main/notes/Python/快速入门.md)
 
 
 

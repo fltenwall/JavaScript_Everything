@@ -43,13 +43,13 @@ session集中存储用户信息，一般存放在服务器缓存，访问速度�
 1. 服务端返回数据时可以会被劫持，如果不是返回用户id而是直接返回用户信息，很可能造成用户隐私泄漏
 2. 用户画像等信息可能体积很大，直接返回数据并不合适
 
-### token
+#### token
 
  1. token是自定义传递，自己在`Request Header`中写入`Authorization`头信息，不像cookie是HTTP 规范，只要不跨越会自己传递
  2. token需要自己存储(主要通过本地storage存储)，浏览器会自动存储cookie
  3. token默认没有跨域限制
 
-### JWT(Json Web Token)登录验证方案
+#### JWT(Json Web Token)登录验证方案
 
 可以取代cookie+session的用户登录方案
 
@@ -58,12 +58,12 @@ session集中存储用户信息，一般存放在服务器缓存，访问速度�
 3. 前端访问服务端接口，就携带这个token作为用户信息
 4. 服务端得到token解析，进行用户校验，返回数据给前端
 
-### JWT 和 cookie+session的区别
+#### JWT 和 cookie+session的区别
 
 1. session和cookie的配合校验中，中间只传递用户id，而不传递用户，用户数据存储在session中
 2. 而 JWT 的校验方案中，用户信息加密后生成 Token并存储在客户端本地，在通信中互相传递，而在服务器没有对应的集中存储
 
-### session与JWT的对比
+#### session与JWT的对比
 
 session优点：session将用户信息存储在服务端，可快速封禁某用户
 

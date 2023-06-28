@@ -184,6 +184,4 @@ function logNumber(num1, num2, num3){
 
 const newLogNumber = logNumber.myBind(null, 1,2)
 console.log(newLogNumber(3)) // 6
-
-
 ```

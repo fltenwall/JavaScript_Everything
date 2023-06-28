@@ -32,8 +32,8 @@ class Promise {
     }
     then(onResolve, onReject){
         return new Promise((resolve, reject) => {
-            if(this.PromiseState === 'fulfilled'){
-                try {
+            try {
+                if(this.PromiseState === 'fulfilled'){
                     let res = onResolve(this.PromiseResult)
                     if(res instanceof Promise) {
                         return res.then(val => {
@@ -44,9 +44,9 @@ class Promise {
                     }else {
                         resolve(res)
                     }
-                } catch (error) {
-                    resolve(res)
                 }
+            } catch (error) {
+                reject(error)
             }
             if(this.PromiseState === 'rejected') onReject(this.PromiseResult)
             if(this.PromiseState === 'pendding') {

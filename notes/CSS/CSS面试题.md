@@ -16,6 +16,7 @@
 * 15. [15. css中哪些属性是可以继承的 ？](#css)
 * 16. [16. 清除浮动有哪些方法, 各有什么优缺点？](#-1)
 * 17. [requestIdleCallback和requestAnimationFrame有什么区别](#requestIdleCallbackrequestAnimationFrame)
+* 18. [如何画一个三角形](#-1)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -330,4 +331,35 @@ scrollHeight = padding + 实际内容尺寸(子元素的大小)
 `requestAnimationFrame` 每次渲染完都会执行，高优先级
 
 requestIdleCallback和requestAnimationFrame 都是宏任务
+
+####  18. <a name='-1'></a>如何画一个三角形
+
+
+其他边框都设置为透明，然后将目标方向的border进行设置
+
+```html
+<head>
+    <style>
+        .triangle{
+            border: 10px solid transparent;
+            border-left: 10px solid lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="triangle"></div>
+</body>
+```
+
+公平处理原则，重叠部分对半划分
+
+```css
+.triangle{
+    width: 10px;
+    border-left: 10px solid lightblue;
+    border-right: 10px solid lightcoral;
+    border-top: 10px solid lightgoldenrodyellow;
+    border-bottom: 10px solid lightseagreen;
+}
+```
 

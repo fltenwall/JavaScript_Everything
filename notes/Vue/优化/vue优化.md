@@ -63,4 +63,4 @@ const router = createRouter({
 
 #### 服务端渲染 SSR
 
-使用`nuxt.js`
+使用`nuxt.js`进行服务端渲染，但是成本高。

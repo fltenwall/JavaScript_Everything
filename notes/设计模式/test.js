@@ -1,13 +1,12 @@
-
-
-function showLevel(level, books){
-    if(level === 'basement'){
-        return books
-    }else if(level === 'high'){
-        return books * 2
-    }else if(level === 'university'){
-        return books * 3
-    }
+var Container = function(x){
+    this._value = x;
 }
 
-console.log(showLevel('high', 10)) // 20
+Container.of = x => new Container(x);
+Container.prototype.map = function(f){
+    return Container.of(f(this._value))
+}
+
+Container.of(3)
+         .map(x => x + 1)
+         .map(x => console.log(`The result is ${x}`)) // 4
