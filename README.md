@@ -18,6 +18,8 @@
 
 [迭代器](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/迭代器.md)
 
+[生成器](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/生成器.md)
+
 [闭包](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/闭包.md)
 
 [this的绑定规则](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/this的绑定规则.md)
