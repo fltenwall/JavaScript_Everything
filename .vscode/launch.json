@@ -5,6 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Array02",
+            "request": "launch",
+            "mainClass": "Array02",
+            "projectName": "JavaScript_Interview_Question_5a06d121"
+        },
+        {
+            "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "Test",
+            "projectName": "JavaScript_Interview_Question_5a06d121"
+        },
+        {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
