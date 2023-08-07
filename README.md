@@ -16,9 +16,9 @@
 
 [响应式原理及实现](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/响应式原理及实现.md)
 
-[迭代器](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/迭代器.md)
+[迭代器](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/JavaScript/迭代器.md)
 
-[生成器](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/生成器.md)
+[生成器](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/JavaScript/生成器.md)
 
 [闭包](https://github.com/fltenwall/JavaScript_Interview_Question/blob/main/notes/闭包.md)
 
